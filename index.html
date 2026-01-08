@@ -21,8 +21,29 @@
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes sun-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        @keyframes eye-blink {
+            0%, 90%, 100% { transform: scaleY(1); }
+            95% { transform: scaleY(0.1); }
+        }
         .animate-float {
             animation: float 3s ease-in-out infinite;
+        }
+        .animate-spin-slow {
+            animation: spin-slow linear infinite;
+        }
+        .animate-sun-pulse {
+            animation: sun-pulse 4s ease-in-out infinite;
+        }
+        .animate-blink {
+            animation: eye-blink 4s infinite;
         }
         .shine-bg {
             background: radial-gradient(circle at center, #ffffff 0%, #fef2f2 100%);

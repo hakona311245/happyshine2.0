@@ -140,11 +140,11 @@ const CourseDetail: React.FC = () => {
               <p className="text-xl text-red-100 mb-10 max-w-2xl mx-auto">
                 Not sure if this is the right level? Join our free 1-on-1 assessment and let our experts guide you.
               </p>
-              <button className="group relative bg-white text-red-600 font-black text-2xl px-12 py-6 rounded-full shadow-xl hover:scale-105 transition-all overflow-hidden">
+              <Link to="/enroll" className="group relative bg-white text-red-600 font-black text-2xl px-12 py-6 rounded-full shadow-xl hover:scale-105 transition-all overflow-hidden inline-block text-center">
                 <span className="relative z-10">Sign Up for Free Test</span>
                 <div className="absolute inset-0 bg-yellow-400 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                 <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-300 rounded-full animate-ping opacity-75"></div>
-              </button>
+              </Link>
             </div>
             {/* Background sparkle icons */}
             <Sparkles className="absolute top-10 left-10 w-12 h-12 text-white/20 animate-pulse" />

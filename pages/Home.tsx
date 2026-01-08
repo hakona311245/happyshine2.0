@@ -4,11 +4,49 @@ import { Sun, Star, CheckCircle, ArrowRight, Play, Users, Award, Smile } from 'l
 import { Link } from 'react-router-dom';
 import StudentAchievements from '../components/StudentAchievements';
 
+const CartoonSun = () => (
+  <div className="relative w-64 h-64 lg:w-96 lg:h-96 flex items-center justify-center">
+    {/* Sun Rays */}
+    <div className="absolute inset-0 animate-spin-slow" style={{ animationDuration: '20s' }}>
+      {[...Array(12)].map((_, i) => (
+        <div
+          key={i}
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-full"
+          style={{ transform: `translateX(-50%) rotate(${i * 30}deg)` }}
+        >
+          <div className="w-full h-12 lg:h-20 bg-yellow-400 rounded-full animate-sun-pulse" style={{ animationDelay: `${i * 0.2}s` }}></div>
+        </div>
+      ))}
+    </div>
+    
+    {/* Sun Body */}
+    <div className="relative w-32 h-32 lg:w-48 lg:h-48 bg-yellow-400 rounded-full shadow-[0_0_50px_rgba(250,204,21,0.4)] flex flex-col items-center justify-center border-4 border-yellow-500 animate-float">
+      {/* Face */}
+      <div className="flex space-x-4 mb-2">
+        <div className="w-3 h-4 lg:w-4 lg:h-6 bg-slate-800 rounded-full animate-blink"></div>
+        <div className="w-3 h-4 lg:w-4 lg:h-6 bg-slate-800 rounded-full animate-blink"></div>
+      </div>
+      <div className="w-8 h-4 lg:w-12 lg:h-6 border-b-4 lg:border-b-8 border-slate-800 rounded-full"></div>
+      
+      {/* Cheeks */}
+      <div className="absolute w-full flex justify-between px-6 lg:px-10 mt-2">
+        <div className="w-3 h-2 lg:w-5 lg:h-3 bg-red-400/40 rounded-full blur-[2px]"></div>
+        <div className="w-3 h-2 lg:w-5 lg:h-3 bg-red-400/40 rounded-full blur-[2px]"></div>
+      </div>
+    </div>
+  </div>
+);
+
 const Home: React.FC = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center bg-white">
+      <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden">
+        {/* Cartoon Sun Background Element */}
+        <div className="absolute -top-10 -left-10 lg:top-0 lg:left-0 opacity-40 lg:opacity-60 z-0">
+          <CartoonSun />
+        </div>
+
         <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-red-50 rounded-full blur-[100px] opacity-60 z-0"></div>
         <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-red-50 rounded-full blur-[100px] opacity-60 z-0"></div>
 
@@ -21,7 +59,7 @@ const Home: React.FC = () => {
             <h1 className="text-5xl lg:text-7xl font-fredoka font-bold text-slate-900 leading-[1.1] mb-6">
               Light Up Your Future with <span className="text-red-600">English Confidence</span>
             </h1>
-            <p className="text-xl text-slate-600 mb-8 leading-relaxed max-w-xl">
+            <p className="text-xl text-slate-600 mb-8 leading-relaxed max-w-xl relative">
               At Happy Shine, we don't just teach English. We cultivate smiles, spark curiosity, and build the foundation for a global future.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -146,9 +184,9 @@ const Home: React.FC = () => {
             <div className="relative z-10 text-center lg:text-left lg:max-w-2xl">
               <h2 className="text-4xl lg:text-5xl font-fredoka font-bold mb-6 text-slate-900">Start Your Journey with <span className="text-red-600">Free Assessment!</span></h2>
               <p className="text-xl text-slate-600 mb-8">Take a 15-minute test and get a personalized learning path from our consultants. No strings attached.</p>
-              <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-xl px-12 py-5 rounded-full shadow-xl shadow-red-200 transition-all hover:scale-105">
+              <Link to="/enroll" className="bg-red-600 hover:bg-red-700 text-white font-bold text-xl px-12 py-5 rounded-full shadow-xl shadow-red-200 transition-all hover:scale-105 inline-block text-center">
                 Book a Free Slot
-              </button>
+              </Link>
             </div>
             <div className="mt-12 lg:mt-0 relative z-10">
               <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600" alt="Consultation" className="rounded-3xl shadow-2xl border-8 border-white w-full max-w-sm rotate-3" />

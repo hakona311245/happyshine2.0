@@ -39,9 +39,9 @@ const Navbar: React.FC = () => {
               {link.name}
             </Link>
           ))}
-          <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-red-200 transition-all transform hover:scale-105 flex items-center gap-2">
+          <Link to="/enroll" className="bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-red-200 transition-all transform hover:scale-105 flex items-center gap-2">
             Enroll Now <Smile className="w-5 h-5" />
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -69,9 +69,9 @@ const Navbar: React.FC = () => {
                 {link.name}
               </Link>
             ))}
-            <button className="bg-red-600 text-white w-full py-4 rounded-xl font-bold text-lg shadow-lg">
-              Get Started
-            </button>
+            <Link to="/enroll" onClick={() => setIsOpen(false)} className="bg-red-600 text-white w-full py-4 rounded-xl font-bold text-center text-lg shadow-lg">
+              Enroll Now
+            </Link>
           </div>
         </div>
       )}

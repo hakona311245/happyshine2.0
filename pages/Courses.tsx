@@ -166,9 +166,9 @@ const Courses: React.FC = () => {
           <GraduationCap className="w-20 h-20 text-white mx-auto mb-8 animate-float" />
           <h2 className="text-4xl lg:text-5xl font-fredoka font-bold text-white mb-8">Ready to Start the Path?</h2>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-white text-red-600 font-bold text-xl px-12 py-5 rounded-full shadow-2xl hover:scale-105 transition-all">
+            <Link to="/enroll" className="bg-white text-red-600 font-bold text-xl px-12 py-5 rounded-full shadow-2xl hover:scale-105 transition-all text-center">
               Join Level Assessment
-            </button>
+            </Link>
           </div>
         </div>
         <div className="absolute -bottom-20 -left-20 text-white/5">
