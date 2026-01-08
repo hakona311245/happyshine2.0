@@ -2,6 +2,7 @@
 import React from 'react';
 import { Sun, Star, CheckCircle, ArrowRight, Play, Users, Award, Smile } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import StudentAchievements from '../components/StudentAchievements';
 
 const Home: React.FC = () => {
   return (
@@ -111,8 +112,11 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Student Achievements */}
+      <StudentAchievements />
+
       {/* Featured Statistics */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div>
@@ -136,7 +140,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="bg-white rounded-[3rem] p-12 lg:p-20 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between border-4 border-red-600/5">
             <div className="relative z-10 text-center lg:text-left lg:max-w-2xl">

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Sun, Target, Rocket, Heart, Award, Smile, ShieldCheck } from 'lucide-react';
+import StudentAchievements from '../components/StudentAchievements';
 
 const About: React.FC = () => {
   return (
@@ -92,6 +93,9 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Student Achievements */}
+      <StudentAchievements />
 
       {/* Values */}
       <section className="py-24 bg-white">
