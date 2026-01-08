@@ -1,37 +1,27 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Sun, Menu, X, Smile } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Our Story', path: '/about' },
     { name: 'Courses', path: '/courses' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
-    }`}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-3 transition-all duration-300">
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
           <div className="bg-red-600 p-2 rounded-full flex items-center justify-center">
             <Sun className="text-white w-6 h-6 animate-spin-slow" style={{ animationDuration: '10s' }} />
           </div>
-          <span className="text-2xl font-fredoka font-bold tracking-tight">
+          <span className="text-2xl font-fredoka font-bold tracking-tight text-slate-900">
             Happy <span className="text-red-600">Shine</span>
           </span>
         </Link>
@@ -43,7 +33,7 @@ const Navbar: React.FC = () => {
               key={link.path}
               to={link.path}
               className={`font-semibold hover:text-red-600 transition-colors ${
-                location.pathname === link.path ? 'text-red-600 underline underline-offset-8' : 'text-slate-700'
+                location.pathname === link.path ? 'text-red-600 underline underline-offset-8 decoration-2' : 'text-slate-700'
               }`}
             >
               {link.name}

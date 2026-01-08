@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
               <li><a href="#" className="hover:text-red-500 transition-colors">Home</a></li>
               <li><a href="#/about" className="hover:text-red-500 transition-colors">Our Story</a></li>
               <li><a href="#/courses" className="hover:text-red-500 transition-colors">English Courses</a></li>
-              <li><a href="#" className="hover:text-red-500 transition-colors">Student Portal</a></li>
+              <li><a href="#/contact" className="hover:text-red-500 transition-colors">Contact Us</a></li>
             </ul>
           </div>
 
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-xl font-bold mb-6">Contact Us</h4>
+            <h4 className="text-xl font-bold mb-6">Reach Out</h4>
             <ul className="space-y-4 text-slate-400">
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-red-500 mt-1 flex-shrink-0" />

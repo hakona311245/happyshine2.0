@@ -1,83 +1,90 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sun, Star, BookOpen, MessageCircle, Briefcase, GraduationCap, ArrowRight, Smile, Rocket, Wind, Key, CheckCircle, Lightbulb, Award, Flag } from 'lucide-react';
+import { Sun, Star, ArrowRight, Smile, Rocket, Wind, Key, CheckCircle, GraduationCap, Flag } from 'lucide-react';
 import StudentAchievements from '../components/StudentAchievements';
 
-const Courses: React.FC = () => {
-  const levels = [
-    {
-      id: '01',
-      title: 'Kids',
-      subtitle: 'Early Explorers',
-      description: 'The fun begins! Using games, songs, and physical activities to introduce English naturally (Ages 4-6).',
-      icon: <Smile className="w-8 h-8" />,
-      color: 'bg-yellow-400 text-white',
-      accent: 'text-yellow-600',
-      tag: 'Pre-A1'
-    },
-    {
-      id: '02',
-      title: 'Starters',
-      subtitle: 'First Steps',
-      description: 'Building a solid foundation in reading, writing, and speaking through interactive materials.',
-      icon: <Star className="w-8 h-8" />,
-      color: 'bg-orange-400 text-white',
-      accent: 'text-orange-600',
-      tag: 'Pre-A1 (Cambridge)'
-    },
-    {
-      id: '03',
-      title: 'Movers',
-      subtitle: 'Active Learners',
-      description: 'Developing practical communication skills. Students start taking part in simple conversations.',
-      icon: <Rocket className="w-8 h-8" />,
-      color: 'bg-red-500 text-white',
-      accent: 'text-red-700',
-      tag: 'A1 (Cambridge)'
-    },
-    {
-      id: '04',
-      title: 'Flyers',
-      subtitle: 'Confident Speakers',
-      description: 'The bridge to intermediate English. Mastery of everyday written and spoken English.',
-      icon: <Wind className="w-8 h-8" />,
-      color: 'bg-pink-500 text-white',
-      accent: 'text-pink-700',
-      tag: 'A2 (Cambridge)'
-    },
-    {
-      id: '05',
-      title: 'KET',
-      subtitle: 'Key Foundations',
-      description: 'A basic-level qualification that shows you can use English to communicate in simple situations.',
-      icon: <Key className="w-8 h-8" />,
-      color: 'bg-blue-500 text-white',
-      accent: 'text-blue-700',
-      tag: 'A2 (Key)'
-    },
-    {
-      id: '06',
-      title: 'PET',
-      subtitle: 'Intermediate Bridge',
-      description: 'Developing the ability to communicate in English for practical tasks at an intermediate level.',
-      icon: <CheckCircle className="w-8 h-8" />,
-      color: 'bg-indigo-500 text-white',
-      accent: 'text-indigo-700',
-      tag: 'B1 (Preliminary)'
-    },
-    {
-      id: '07',
-      title: 'IELTS',
-      subtitle: 'Global Success',
-      description: 'Advanced preparation for higher education and global migration. Professional English mastery.',
-      icon: <GraduationCap className="w-8 h-8" />,
-      color: 'bg-slate-900 text-white',
-      accent: 'text-slate-400',
-      tag: 'B2 - C1+'
-    }
-  ];
+export const courseData = [
+  {
+    id: 'kids',
+    num: '01',
+    title: 'Kids',
+    subtitle: 'Early Explorers',
+    description: 'The fun begins! Using games, songs, and physical activities to introduce English naturally (Ages 4-6).',
+    icon: <Smile className="w-8 h-8" />,
+    color: 'bg-yellow-400 text-white',
+    accent: 'text-yellow-600',
+    tag: 'Pre-A1'
+  },
+  {
+    id: 'starters',
+    num: '02',
+    title: 'Starters',
+    subtitle: 'First Steps',
+    description: 'Building a solid foundation in reading, writing, and speaking through interactive materials.',
+    icon: <Star className="w-8 h-8" />,
+    color: 'bg-orange-400 text-white',
+    accent: 'text-orange-600',
+    tag: 'Pre-A1 (Cambridge)'
+  },
+  {
+    id: 'movers',
+    num: '03',
+    title: 'Movers',
+    subtitle: 'Active Learners',
+    description: 'Developing practical communication skills. Students start taking part in simple conversations.',
+    icon: <Rocket className="w-8 h-8" />,
+    color: 'bg-red-500 text-white',
+    accent: 'text-red-700',
+    tag: 'A1 (Cambridge)'
+  },
+  {
+    id: 'flyers',
+    num: '04',
+    title: 'Flyers',
+    subtitle: 'Confident Speakers',
+    description: 'The bridge to intermediate English. Mastery of everyday written and spoken English.',
+    icon: <Wind className="w-8 h-8" />,
+    color: 'bg-pink-500 text-white',
+    accent: 'text-pink-700',
+    tag: 'A2 (Cambridge)'
+  },
+  {
+    id: 'ket',
+    num: '05',
+    title: 'KET',
+    subtitle: 'Key Foundations',
+    description: 'A basic-level qualification that shows you can use English to communicate in simple situations.',
+    icon: <Key className="w-8 h-8" />,
+    color: 'bg-blue-500 text-white',
+    accent: 'text-blue-700',
+    tag: 'A2 (Key)'
+  },
+  {
+    id: 'pet',
+    num: '06',
+    title: 'PET',
+    subtitle: 'Intermediate Bridge',
+    description: 'Developing the ability to communicate in English for practical tasks at an intermediate level.',
+    icon: <CheckCircle className="w-8 h-8" />,
+    color: 'bg-indigo-500 text-white',
+    accent: 'text-indigo-700',
+    tag: 'B1 (Preliminary)'
+  },
+  {
+    id: 'ielts',
+    num: '07',
+    title: 'IELTS',
+    subtitle: 'Global Success',
+    description: 'Advanced preparation for higher education and global migration. Professional English mastery.',
+    icon: <GraduationCap className="w-8 h-8" />,
+    color: 'bg-slate-900 text-white',
+    accent: 'text-slate-400',
+    tag: 'B2 - C1+'
+  }
+];
 
+const Courses: React.FC = () => {
   return (
     <div className="bg-white min-h-screen">
       {/* Header */}
@@ -104,7 +111,7 @@ const Courses: React.FC = () => {
             <div className="absolute left-8 top-0 bottom-0 w-1 bg-red-100 lg:hidden"></div>
 
             <div className="space-y-20 relative">
-              {levels.map((level, index) => (
+              {courseData.map((level, index) => (
                 <div key={level.id} className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-0 ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
                   
                   {/* Card Content */}
@@ -112,14 +119,17 @@ const Courses: React.FC = () => {
                     <div className={`bg-white p-8 rounded-[2rem] shadow-xl border-2 border-slate-50 hover:border-red-600 transition-all group relative ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
                       <div className={`flex items-center gap-3 mb-4 ${index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
                         <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">{level.tag}</span>
-                        <span className="text-2xl font-black text-red-600/10 font-fredoka">{level.id}</span>
+                        <span className="text-2xl font-black text-red-600/10 font-fredoka">{level.num}</span>
                       </div>
                       <h3 className="text-2xl font-fredoka font-bold text-slate-900 mb-1">{level.title}</h3>
                       <h4 className={`${level.accent} font-bold text-sm uppercase mb-4`}>{level.subtitle}</h4>
                       <p className="text-slate-600 text-sm leading-relaxed mb-6">{level.description}</p>
-                      <button className={`inline-flex items-center font-bold text-sm group-hover:text-red-600 transition-colors ${index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
-                        View Syllabus <ArrowRight className={`w-4 h-4 ${index % 2 === 0 ? 'mr-2 rotate-180' : 'ml-2'}`} />
-                      </button>
+                      <Link 
+                        to={`/courses/${level.id}`}
+                        className={`inline-flex items-center font-bold text-sm text-red-600 group-hover:scale-105 transition-transform ${index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}
+                      >
+                        See Detail <ArrowRight className={`w-4 h-4 ${index % 2 === 0 ? 'mr-2 rotate-180' : 'ml-2'}`} />
+                      </Link>
                     </div>
                   </div>
 
