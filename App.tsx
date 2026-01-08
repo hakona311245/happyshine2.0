@@ -6,6 +6,7 @@ import About from './pages/About';
 import Courses from './pages/Courses';
 import CourseDetail from './pages/CourseDetail';
 import Contact from './pages/Contact';
+import LegalPaper from './pages/LegalPaper';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -22,6 +23,7 @@ const App: React.FC = () => {
             <Route path="/courses" element={<Courses />} />
             <Route path="/courses/:courseId" element={<CourseDetail />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/legal-paper" element={<LegalPaper />} />
           </Routes>
         </main>
         <Footer />

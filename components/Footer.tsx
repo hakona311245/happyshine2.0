@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Sun, Mail, Phone, MapPin, Facebook, Instagram, Twitter, Smile } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -31,10 +32,10 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-xl font-bold mb-6">Quick Links</h4>
             <ul className="space-y-4 text-slate-400">
-              <li><a href="#" className="hover:text-red-500 transition-colors">Home</a></li>
-              <li><a href="#/about" className="hover:text-red-500 transition-colors">Our Story</a></li>
-              <li><a href="#/courses" className="hover:text-red-500 transition-colors">English Courses</a></li>
-              <li><a href="#/contact" className="hover:text-red-500 transition-colors">Contact Us</a></li>
+              <li><Link to="/" className="hover:text-red-500 transition-colors">Home</Link></li>
+              <li><Link to="/about" className="hover:text-red-500 transition-colors">Our Story</Link></li>
+              <li><Link to="/courses" className="hover:text-red-500 transition-colors">English Courses</Link></li>
+              <li><Link to="/contact" className="hover:text-red-500 transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -43,7 +44,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-slate-400">
               <li><a href="#" className="hover:text-red-500 transition-colors">Help Center</a></li>
               <li><a href="#" className="hover:text-red-500 transition-colors">Enrollment Guide</a></li>
-              <li><a href="#" className="hover:text-red-500 transition-colors">Scholarships</a></li>
+              <li><Link to="/legal-paper" className="hover:text-red-500 transition-colors">Legal Documents</Link></li>
               <li><a href="#" className="hover:text-red-500 transition-colors">Privacy Policy</a></li>
             </ul>
           </div>
