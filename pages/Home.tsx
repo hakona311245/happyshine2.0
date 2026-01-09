@@ -125,20 +125,32 @@ const Home: React.FC = () => {
               {
                 icon: <Users className="w-10 h-10" />,
                 title: "Giáo viên bản ngữ chất lượng",
-                desc: "Học và giao tiếp cùng các giáo viên bản ngữ để giúp các bé hình thành kỹ năng tiếng anh một cách tự nhiên."
+                desc: "Học và giao tiếp cùng các giáo viên bản ngữ để giúp các bé hình thành kỹ năng tiếng anh một cách tự nhiên.",
+                image: "https://images.unsplash.com/photo-1588072432836-6a42f19ed8e6?auto=format&fit=crop&q=80&w=800"
               },
               {
                 icon: <Smile className="w-10 h-10" />,
                 title: "Học tập bắt đầu từ niềm vui",
-                desc: "Học viên vui là học viên sẽ học giỏi, chương trình sẽ đầy các hoạt động thú vị"
+                desc: "Học viên vui là học viên sẽ học giỏi, chương trình sẽ đầy các hoạt động thú vị",
+                image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800"
               },
               {
                 icon: <Award className="w-10 h-10" />,
                 title: "Tỏa sáng cùng chứng chỉ quốc tế",
-                desc: "Nhận các chứng chỉ được công nhận bởi nhiều trường đại học và nhà tuyển dụng trên toàn thế giới."
+                desc: "Nhận các chứng chỉ được công nhận bởi nhiều trường đại học và nhà tuyển dụng trên toàn thế giới.",
+                image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800"
               }
             ].map((item, i) => (
               <div key={i} className="bg-white p-10 rounded-3xl shadow-xl hover:translate-y-[-10px] transition-all duration-300">
+                <div className="relative w-full h-56 rounded-2xl overflow-hidden mb-6">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                </div>
                 <div className="text-red-600 mb-6 bg-red-50 w-20 h-20 rounded-2xl flex items-center justify-center">
                   {item.icon}
                 </div>
@@ -153,7 +165,7 @@ const Home: React.FC = () => {
       {/* Student Achievements */}
       <StudentAchievements />
 
-      {/* Featured Statistics */}
+      {/* Featured Statistics 
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
@@ -176,7 +188,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-
+      */}
+      
       {/* CTA Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
