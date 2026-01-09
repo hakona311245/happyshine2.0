@@ -9,9 +9,9 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Our Story', path: '/about' },
-    { name: 'Courses', path: '/courses' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Giới thiệu', path: '/about' },
+    { name: 'Khóa Học', path: '/courses' },
+    { name: 'Liên Lạc', path: '/contact' },
   ];
 
   return (
@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
             </Link>
           ))}
           <Link to="/enroll" className="bg-red-600 hover:bg-red-700 text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-red-200 transition-all transform hover:scale-105 flex items-center gap-2">
-            Enroll Now <Smile className="w-5 h-5" />
+            Đăng Ký Ngay <Smile className="w-5 h-5" />
           </Link>
         </div>
 

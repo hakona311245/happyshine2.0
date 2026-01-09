@@ -58,10 +58,10 @@ const StudentAchievements: React.FC<StudentAchievementsProps> = ({ defaultFilter
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-1.5 rounded-full text-sm font-bold mb-4">
             <Award className="w-4 h-4" />
-            <span>Success Stories</span>
+            <span>Our Shining Stars</span>
           </div>
-          <h2 className="text-3xl lg:text-4xl font-fredoka font-bold text-slate-900 mb-4">Our Shining Graduates</h2>
-          <p className="text-slate-600 max-w-xl mx-auto text-sm md:text-base">Meet the bright minds who found their light at Happy Shine. Every student is a story of achievement.</p>
+          <h2 className="text-3xl lg:text-4xl font-fredoka font-bold text-slate-900 mb-4">Các Bé Tự Hào</h2>
+          <p className="text-slate-600 max-w-xl mx-auto text-sm md:text-base">Khám phá những học viên tiêu biểu của Happy Shine. Mỗi học viên là một câu chuyện nỗ lực và thành tựu.</p>
         </div>
 
         {/* Filter Selection */}
@@ -121,14 +121,15 @@ const StudentAchievements: React.FC<StudentAchievementsProps> = ({ defaultFilter
                           className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" 
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
-                        {/* Floating Level Tag */}
+                        {/*
+                        {/* Floating Level Tag 
                         <div className="absolute bottom-6 left-6 right-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                           <div className="inline-flex items-center gap-1.5 text-xs font-black text-white bg-red-600 px-4 py-2 rounded-full uppercase tracking-widest shadow-xl">
                             <Star className="w-3.5 h-3.5 fill-current" />
                             {student.level}
                           </div>
                         </div>
+                         */}
                       </div>
                       
                       {/* Content Area */}
