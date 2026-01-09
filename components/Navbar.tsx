@@ -1,7 +1,9 @@
 
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Sun, Menu, X, Smile } from 'lucide-react';
+import { Menu, X, Smile } from 'lucide-react';
+
+import logo from '@/media/logo/pnglogo/HAPPY SHINE - LOGO-04 - CROP.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,15 +17,14 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-3 transition-all duration-300">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-2 transition-all duration-300">
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="flex items-center space-x-2">
-          <div className="bg-red-600 p-2 rounded-full flex items-center justify-center">
-            <Sun className="text-white w-6 h-6 animate-spin-slow" style={{ animationDuration: '10s' }} />
-          </div>
-          <span className="text-2xl font-fredoka font-bold tracking-tight text-slate-900">
-            Happy <span className="text-red-600">Shine</span>
-          </span>
+        <Link to="/" className="flex items-center pl-2">
+          <img
+            src={logo}
+            alt="Happy Shine"
+            className="h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop Nav */}

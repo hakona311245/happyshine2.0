@@ -2,7 +2,11 @@
 import React from 'react';
 import { Sun, Star, CheckCircle, ArrowRight, Play, Users, Award, Smile } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 import StudentAchievements from '../components/StudentAchievements';
+import msMaiclass from '@/media/img/gallery/msMaiandclass.jpg';
+import englishteacher from '@/media/img/gallery/englishteacher.jpg';
+import msTrinhclass from '@/media/img/gallery/msTrinhandclass.jpg';
 
 const CartoonSun = () => (
   <div className="relative w-64 h-64 lg:w-96 lg:h-96 flex items-center justify-center">
@@ -92,7 +96,7 @@ const Home: React.FC = () => {
 
           <div className="relative">
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-red-100 rotate-2 hover:rotate-0 transition-transform duration-500">
-              <img src="https://images.unsplash.com/photo-1543269664-56d93c1b41a6?auto=format&fit=crop&q=80&w=1200" alt="Students Learning" className="w-full h-auto" />
+              <img src={msMaiclass} alt="Students Learning" className="w-full h-auto" />
             </div>
             {/*<div className="absolute -top-10 -right-10 w-40 h-40 bg-white rounded-2xl shadow-xl flex flex-col items-center justify-center p-4 z-20 animate-float">
               <Sun className="w-12 h-12 text-yellow-500 mb-2" />
@@ -126,13 +130,13 @@ const Home: React.FC = () => {
                 icon: <Users className="w-10 h-10" />,
                 title: "Giáo viên bản ngữ chất lượng",
                 desc: "Học và giao tiếp cùng các giáo viên bản ngữ để giúp các bé hình thành kỹ năng tiếng anh một cách tự nhiên.",
-                image: "https://images.unsplash.com/photo-1588072432836-6a42f19ed8e6?auto=format&fit=crop&q=80&w=800"
+                image: englishteacher
               },
               {
                 icon: <Smile className="w-10 h-10" />,
                 title: "Học tập bắt đầu từ niềm vui",
                 desc: "Học viên vui là học viên sẽ học giỏi, chương trình sẽ đầy các hoạt động thú vị",
-                image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800"
+                image: msTrinhclass
               },
               {
                 icon: <Award className="w-10 h-10" />,
@@ -149,10 +153,15 @@ const Home: React.FC = () => {
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-                </div>
-                <div className="text-red-600 mb-6 bg-red-50 w-20 h-20 rounded-2xl flex items-center justify-center">
-                  {item.icon}
+
+                  <div className="absolute top-4 left-4 z-10
+                  bg-white/90 text-red-600
+                  w-12 h-12 rounded-xl
+                  flex items-center justify-center
+                  shadow-lg">
+                  {item.icon} </div>
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">{item.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{item.desc}</p>
@@ -195,10 +204,10 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="bg-white rounded-[3rem] p-12 lg:p-20 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between border-4 border-red-600/5">
             <div className="relative z-10 text-center lg:text-left lg:max-w-2xl">
-              <h2 className="text-4xl lg:text-5xl font-fredoka font-bold mb-6 text-slate-900">Start Your Journey with <span className="text-red-600">Free Assessment!</span></h2>
-              <p className="text-xl text-slate-600 mb-8">Take a 15-minute test and get a personalized learning path from our consultants. No strings attached.</p>
+              <h2 className="text-4xl lg:text-5xl font-fredoka font-bold mb-6 text-slate-900">Bắt đầu hành trình với <span className="text-red-600">Bài đánh giá miễn phí!</span></h2>
+              <p className="text-xl text-slate-600 mb-8">Làm bài kiểm tra đánh giá và nhận lộ trình học tập cá nhân hóa cho riêng bé từ đội ngũ thầy cô — hoàn toàn miễn phí.</p>
               <Link to="/enroll" className="bg-red-600 hover:bg-red-700 text-white font-bold text-xl px-12 py-5 rounded-full shadow-xl shadow-red-200 transition-all hover:scale-105 inline-block text-center">
-                Book a Free Slot
+                Đăng Ký Ngay!
               </Link>
             </div>
             <div className="mt-12 lg:mt-0 relative z-10">
