@@ -2,6 +2,10 @@
 import React, { useRef, useState, useMemo, useEffect } from 'react';
 import { Award, Star, ChevronLeft, ChevronRight, Check } from 'lucide-react';
 
+{/* URL HÌNH HỌC SINH */}
+import phamnhutkhanhimg from "@/media/img/students/movers/phamnhutkhanh.jpg";
+import chaungockienimg from "@/media/img/students/movers/chaungockien.jpg";
+
 const students = [
   { name: "Liam Nguyen", level: "IELTS 8.5", category: "IELTS", image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=600" },
   { name: "Sarah Jenkins", level: "KET Graduate", category: "KET", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=600" },
@@ -9,7 +13,8 @@ const students = [
   { name: "Mia Sofia", level: "Kids Honors", category: "Kids", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=600" },
   { name: "Oliver Brown", level: "Starters Grad", category: "Starters", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=600" },
   { name: "Chloe Park", level: "Kids Star", category: "Kids", image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=600" },
-  { name: "Ethan James", level: "Movers Champ", category: "Movers", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=600" },
+  { name: "Phạm Nhựt Khanh", level: "Movers Champ", category: "Movers", image:phamnhutkhanhimg},
+  { name: "Châu Ngọc Kiên", level: "Movers Champ", category: "Movers", image:chaungockienimg},
   { name: "Sophia Chen", level: "PET Excellence", category: "PET", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" },
 ];
 
@@ -139,7 +144,7 @@ const StudentAchievements: React.FC<StudentAchievementsProps> = ({ defaultFilter
                         </h4>
                         <div className="flex items-center justify-center gap-1.5 mt-1 text-slate-500 text-sm">
                            <Check className="w-4 h-4 text-green-500" />
-                           <span>Graduate Class of 2024</span>
+                           <span>Đã xuất sắc vượt qua level</span>
                         </div>
                         
                         {/* Decorative element */}
