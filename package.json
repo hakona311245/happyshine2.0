@@ -1,12 +1,15 @@
 {
   "name": "happy-shine-english-center",
+  "homepage": "https://hakona311245.github.io/happyshine2.0/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.2.3",
