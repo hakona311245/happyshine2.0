@@ -7,6 +7,7 @@ import StudentAchievements from '../components/StudentAchievements';
 import msMaiclass from '@/media/img/gallery/msMaiandclass.jpg';
 import englishteacher from '@/media/img/gallery/englishteacher.jpg';
 import msTrinhclass from '@/media/img/gallery/msTrinhandclass.jpg';
+import raisehands from '@/media/img/gallery/studentraisinghand.jpg';
 
 const CartoonSun = () => (
   <div className="relative w-64 h-64 lg:w-96 lg:h-96 flex items-center justify-center">
@@ -142,7 +143,7 @@ const Home: React.FC = () => {
                 icon: <Award className="w-10 h-10" />,
                 title: "Tỏa sáng cùng chứng chỉ quốc tế",
                 desc: "Nhận các chứng chỉ được công nhận bởi nhiều trường đại học và nhà tuyển dụng trên toàn thế giới.",
-                image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800"
+                image: raisehands
               }
             ].map((item, i) => (
               <div key={i} className="bg-white p-10 rounded-3xl shadow-xl hover:translate-y-[-10px] transition-all duration-300">

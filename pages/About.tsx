@@ -70,8 +70,8 @@ const About: React.FC = () => {
           <div className="relative space-y-12">
             <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-red-200 -translate-x-1/2 hidden md:block"></div>
             {[
-              { year: '2012', title: 'The First Spark', desc: 'Happy Shine was founded with a small classroom of 5 students and 1 teacher.' },
-              { year: '2015', title: 'Growing Brightly', desc: 'Expansion to our second campus and introducing the "Smile Curriculum".' },
+              { year: '2012', title: 'Ánh nắng đầu tiên', desc: 'Happy Shine là một lớp học nho nhỏ với vài bé học sinh và các thầy cô tận tâm' },
+              { year: '2015', title: 'Bắt đầu tỏa sáng', desc: 'Happy Shine bắt đầu mở rộng tiếp đón nhiều bé hơn' },
               { year: '2018', title: 'Global Recognition', desc: 'Voted "Most Innovative English Center" by the International Education Board.' },
               { year: '2022', title: 'Digital Dawn', desc: 'Launched our high-end digital learning platform reaching students globally.' },
               { year: '2024', title: 'The Sunshine Hub', desc: 'Opening our state-of-the-art mega campus in the city center.' },

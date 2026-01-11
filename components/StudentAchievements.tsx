@@ -62,7 +62,7 @@ const StudentAchievements: React.FC<StudentAchievementsProps> = ({ defaultFilter
             <Award className="w-4 h-4" />
             <span>Our Shining Stars</span>
           </div>
-          <h2 className="text-3xl lg:text-4xl font-fredoka font-bold text-slate-900 mb-4">Các Bé Tự Hào</h2>
+          <h2 className="text-3xl lg:text-4xl font-fredoka font-bold text-slate-900 mb-4">Những ngôi sao sáng của trung tâm</h2>
           <p className="text-slate-600 max-w-xl mx-auto text-sm md:text-base">Khám phá những học viên tiêu biểu của Happy Shine. Mỗi học viên là một câu chuyện nỗ lực và thành tựu.</p>
         </div>
 
@@ -159,7 +159,7 @@ const StudentAchievements: React.FC<StudentAchievementsProps> = ({ defaultFilter
           ) : (
             <div className="py-20 text-center bg-slate-50 rounded-[2rem] border-2 border-dashed border-slate-200">
               <Award className="w-12 h-12 text-slate-300 mx-auto mb-4" />
-              <p className="text-slate-500 font-medium">New graduates in the {activeFilter} level are coming soon!</p>
+              <p className="text-slate-500 font-medium">Các bé level {activeFilter} level sẽ được giới thiệu ngay đây</p>
             </div>
           )}
         </div>
