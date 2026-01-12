@@ -8,6 +8,7 @@ import msMaiclass from '@/media/img/gallery/msMaiandclass.jpg';
 import englishteacher from '@/media/img/gallery/englishteacher.jpg';
 import msTrinhclass from '@/media/img/gallery/msTrinhandclass.jpg';
 import raisehands from '@/media/img/gallery/studentraisinghand.jpg';
+import Certificate from '@/components/certificate';
 
 const CartoonSun = () => (
   <div className="relative w-64 h-64 lg:w-96 lg:h-96 flex items-center justify-center">
@@ -175,6 +176,7 @@ const Home: React.FC = () => {
       {/* Student Achievements */}
       <StudentAchievements />
 
+      <Certificate />
       {/* Featured Statistics 
       <section className="py-20 bg-slate-50">
         <div className="container mx-auto px-6">
