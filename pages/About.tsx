@@ -2,6 +2,9 @@
 import React from 'react';
 import { Sun, Target, Rocket, Heart, Award, Smile, ShieldCheck } from 'lucide-react';
 import StudentAchievements from '../components/StudentAchievements';
+import studentraisinghand from '@/media/img/gallery/studentraisinghand.jpg';
+import studentplayinggame from '@/media/img/gallery/studentplayinggame.jpg';
+import Certificate from '@/components/certificate';
 
 const About: React.FC = () => {
   return (
@@ -12,8 +15,8 @@ const About: React.FC = () => {
             <Sun className="w-96 h-96 animate-spin-slow" style={{ animationDuration: '60s' }} />
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <h1 className="text-5xl lg:text-6xl font-fredoka font-bold mb-6">The Happy Shine Story</h1>
-          <p className="text-xl text-red-100 max-w-3xl mx-auto">Founded on the belief that language learning should be as natural and joyful as a child's smile.</p>
+          <h1 className="text-5xl lg:text-6xl font-fredoka font-bold mb-6">Câu Chuyện của Happy Shine</h1>
+          <p className="text-xl text-red-100 max-w-3xl mx-auto">Happy Shine được thành lập với niềm tin rằng việc học ngôn ngữ nên tự nhiên và mang lại niềm vui, như chính nụ cười của trẻ.</p>
         </div>
       </section>
 
@@ -24,17 +27,18 @@ const About: React.FC = () => {
             <div>
               <div className="flex items-center space-x-4 mb-6">
                 <div className="h-1 w-12 bg-red-600"></div>
-                <span className="text-red-600 font-bold uppercase tracking-widest">Our DNA</span>
+                <span className="text-red-600 font-bold uppercase tracking-widest">Phương Châm</span>
               </div>
-              <h2 className="text-4xl font-fredoka font-bold text-slate-900 mb-8">Illuminating Minds Through Joyful Education</h2>
+              <h2 className="text-4xl font-fredoka font-bold text-slate-900 mb-1">Nuôi dưỡng tư duy của các bé</h2>
+              <h2 className="text-4xl font-fredoka font-bold text-slate-900 mb-8">qua việc học đầy niềm vui</h2>
               <div className="space-y-8">
                 <div className="flex gap-6">
                   <div className="bg-red-50 p-4 rounded-2xl h-fit">
                     <Target className="w-8 h-8 text-red-600" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold mb-2">Our Mission</h3>
-                    <p className="text-slate-600 text-lg">To create a world where language barriers are dissolved by the power of confidence and the warmth of a smile.</p>
+                    <h3 className="text-2xl font-bold mb-2">Sứ Mệnh Của Happy Shine</h3>
+                    <p className="text-slate-600 text-lg">Giới thiệu các bé tới môi trường học mà rào cản ngôn ngữ bị phá vỡ bởi những tiết học thú vị và ấm áp</p>
                   </div>
                 </div>
                 <div className="flex gap-6">
@@ -42,16 +46,16 @@ const About: React.FC = () => {
                     <Rocket className="w-8 h-8 text-red-600" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold mb-2">Our Vision</h3>
-                    <p className="text-slate-600 text-lg">To be the global leader in emotionally intelligent English education, preparing students for an interconnected world.</p>
+                    <h3 className="text-2xl font-bold mb-2">Tầm Nhìn Của Happy Shine</h3>
+                    <p className="text-slate-600 text-lg">Trở thành trung tâm tiếng Anh hàng đầu đồng hành cùng học sinh trên chặng đường chinh phục tiếng Anh.</p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="relative">
               <div className="grid grid-cols-2 gap-4">
-                <img src="https://picsum.photos/400/500?random=10" className="rounded-3xl shadow-xl mt-12" alt="Center" />
-                <img src="https://picsum.photos/400/500?random=11" className="rounded-3xl shadow-xl" alt="Students" />
+                <img src={studentraisinghand} className="rounded-3xl shadow-xl mt-12" alt="Center" />
+                <img src={studentplayinggame} className="rounded-3xl shadow-xl" alt="Students" />
               </div>
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-full shadow-2xl">
                  <Smile className="w-16 h-16 text-red-600" />
@@ -65,7 +69,7 @@ const About: React.FC = () => {
       <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-fredoka font-bold text-slate-900">A Decade of Shining</h2>
+            <h2 className="text-4xl font-fredoka font-bold text-slate-900">Hành Trình Vươn Lên Của Happy Shine</h2>
           </div>
           <div className="relative space-y-12">
             <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-red-200 -translate-x-1/2 hidden md:block"></div>
@@ -102,10 +106,10 @@ const About: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { icon: <Heart className="text-red-600" />, title: "Student-First", desc: "Every decision we make starts with the student's well-being." },
-              { icon: <ShieldCheck className="text-red-600" />, title: "Integrity", desc: "Honest feedback and transparent results for every learner." },
-              { icon: <Award className="text-red-600" />, title: "Excellence", desc: "Striving for the highest academic standards in everything we do." },
-              { icon: <Sun className="text-red-600" />, title: "Positivity", desc: "Maintaining an environment that encourages and inspires." },
+              { icon: <Heart className="text-red-600" />, title: "Student-First", desc: "Phát triển với các bé được đặt lên hàng đầu." },
+              { icon: <ShieldCheck className="text-red-600" />, title: "Minh Bạch", desc: "Minh bạch trong mọi quy trình giảng dạy và kết quả của các bé." },
+              { icon: <Award className="text-red-600" />, title: "Chất Lượng", desc: "Hướng các bé tới kết quả học tốt nhất có thể." },
+              { icon: <Sun className="text-red-600" />, title: "Tích Cực", desc: "Cho các bé môi trường học tập tích cực và gần gũi với thầy cô nhấ." },
             ].map((v, i) => (
               <div key={i} className="text-center p-8">
                 <div className="bg-red-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -118,6 +122,10 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+      {/* Values */}
+
+      {/* <Certificate /> */}
+      <Certificate/>
     </div>
   );
 };

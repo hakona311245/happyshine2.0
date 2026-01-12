@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, ShieldCheck, BadgeCheck, FileText } from 'lucide-react';
+import bronzecerti from '@/media/img/gallery/bronzecambridgecerti.jpg';
 
 type CertificationItem = {
   title: string;
@@ -13,29 +14,19 @@ type CertificationItem = {
 
 const certifications: CertificationItem[] = [
   {
-    title: 'Authorized English Training Center',
+    title: 'Đạt chuẩn Trung Tâm Anh Ngữ Cambridge',
     description: 'Accredited for safe operations and quality teaching.',
     issuer: 'Local Education Authority',
     year: '2024',
-    Icon: ShieldCheck,
-  },
-  {
-    title: 'Teaching Excellence Program',
-    description: 'Recognizes strong curriculum and teacher growth.',
-    issuer: 'Academic Quality Council',
-    year: '2023',
-    Icon: BadgeCheck,
-  },
-  {
-    title: 'Learning Services Quality Mark',
-    description: 'Quality mark for learner-first service standards.',
-    issuer: 'Education Standards Board',
-    year: '2022',
+    image: bronzecerti,
+    imageAlt: 'Cambridge Accreditation Certificate',
     Icon: Award,
   },
 ];
 
 const Certificate: React.FC = () => {
+  const isSingleCard = certifications.length === 1;
+
   return (
     <section className="py-20 bg-white relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-100 to-transparent"></div>
@@ -44,30 +35,33 @@ const Certificate: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-1.5 rounded-full text-sm font-bold mb-4">
             <Award className="w-4 h-4" />
-            <span>Certification & Accreditation</span>
+            <span>Chứng Chỉ & Thành Tích</span>
           </div>
           <h2 className="text-3xl lg:text-4xl font-fredoka font-bold text-slate-900 mb-4">
-            Trusted standards for confident learning
+            Chương Trình Đạt Chuẩn Quốc Tế
           </h2>
           <p className="text-slate-600 max-w-2xl mx-auto text-sm md:text-base">
-            Our center follows recognized education standards to ensure safe, structured, and
-            measurable progress for every learner.
+            Happy Shine được Cambridge uy tín công nhận và không ngừng cải tiến chất lượng giảng dạy.
           </p>
         </div>
 
-        <div className="grid gap-6 lg:gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          className={`grid gap-6 lg:gap-8 ${isSingleCard ? 'place-items-center' : 'md:grid-cols-2 lg:grid-cols-3'}`}
+        >
           {certifications.map((certification) => (
             <article
               key={`${certification.title}-${certification.year}`}
-              className="group bg-white rounded-[2rem] border border-slate-100 shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden"
+              className={`group bg-white rounded-[2rem] border border-slate-100 shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden ${
+                isSingleCard ? 'w-full max-w-2xl' : ''
+              }`}
             >
               <div className="p-6 md:p-7">
-                <div className="h-40 md:h-44 w-full rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 via-white to-red-50 overflow-hidden flex items-center justify-center">
+                <div className="h-80 md:h-96 w-full rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 via-white to-red-50 overflow-hidden flex items-center justify-center">
                   {certification.image ? (
                     <img
                       src={certification.image}
                       alt={certification.imageAlt ?? certification.title}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full max-w-[92%] object-contain"
                     />
                   ) : (
                     <div className="flex flex-col items-center text-slate-400">

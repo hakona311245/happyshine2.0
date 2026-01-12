@@ -10,10 +10,12 @@ import LegalPaper from './pages/LegalPaper';
 import Enroll from './pages/Enroll';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         {/* pt-20 added to offset the fixed solid navbar (approx 80px) */}
