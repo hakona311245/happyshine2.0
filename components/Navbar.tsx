@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
     { name: 'Home', path: '/' },
     { name: 'Giới thiệu', path: '/about' },
     { name: 'Khóa Học', path: '/courses' },
-    { name: 'Liên Lạc', path: '/contact' },
+    { name: 'Liên hệ', path: '/contact' },
   ];
 
   return (
