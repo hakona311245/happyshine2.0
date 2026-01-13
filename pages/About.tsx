@@ -21,50 +21,40 @@ const About: React.FC = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div>
-              <div className="flex items-center space-x-4 mb-6">
-                <div className="h-1 w-12 bg-red-600"></div>
-                <span className="text-red-600 font-bold uppercase tracking-widest">Phương Châm</span>
-              </div>
-              <h2 className="text-4xl font-fredoka font-bold text-slate-900 mb-1">Nuôi dưỡng tư duy của các bé</h2>
-              <h2 className="text-4xl font-fredoka font-bold text-slate-900 mb-8">qua việc học đầy niềm vui</h2>
-              <div className="space-y-8">
-                <div className="flex gap-6">
-                  <div className="bg-red-50 p-4 rounded-2xl h-fit">
-                    <Target className="w-8 h-8 text-red-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2">Sứ Mệnh Của Happy Shine</h3>
-                    <p className="text-slate-600 text-lg">Giới thiệu các bé tới môi trường học mà rào cản ngôn ngữ bị phá vỡ bởi những tiết học thú vị và ấm áp</p>
-                  </div>
-                </div>
-                <div className="flex gap-6">
-                  <div className="bg-red-50 p-4 rounded-2xl h-fit">
-                    <Rocket className="w-8 h-8 text-red-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2">Tầm Nhìn Của Happy Shine</h3>
-                    <p className="text-slate-600 text-lg">Trở thành trung tâm tiếng Anh hàng đầu đồng hành cùng học sinh trên chặng đường chinh phục tiếng Anh.</p>
-                  </div>
-                </div>
+          <div className="relative bg-white border border-red-100 rounded-3xl p-8 shadow-sm">
+            <h2 className="text-3xl lg:text-4xl font-fredoka font-bold text-slate-900">Sứ Mệnh & Tầm Nhìn</h2>
+            <Sun className="absolute top-6 right-6 w-8 h-8 text-red-100" aria-hidden="true" />
+          </div>
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="bg-white border border-red-100 rounded-3xl shadow-sm overflow-hidden">
+              <img src={studentraisinghand} className="w-full h-64 lg:h-80 object-cover" alt="Center" loading="lazy" />
+              <div className="p-6">
+                <h3 className="text-2xl font-fredoka font-bold text-slate-900">Nuôi dưỡng tư duy của các bé</h3>
+                <p className="mt-2 text-slate-600">qua việc học đầy niềm vui</p>
               </div>
             </div>
-            <div className="relative">
-              <div className="grid grid-cols-2 gap-4">
-                <img src={studentraisinghand} className="rounded-3xl shadow-xl mt-12" alt="Center" />
-                <img src={studentplayinggame} className="rounded-3xl shadow-xl" alt="Students" />
+            <div className="grid gap-6">
+              <div className="bg-white border border-red-100 rounded-3xl p-6 shadow-sm">
+                <div className="flex items-center gap-3">
+                  <Target className="w-5 h-5 text-red-600" />
+                  <h3 className="text-xl font-bold text-slate-900">Sứ Mệnh Của Happy Shine</h3>
+                </div>
+                <p className="mt-3 text-slate-600">Xóa bỏ rào cản ngôn ngữ bằng những tiết học thú vị, ấm áp.</p>
               </div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-full shadow-2xl">
-                 <Smile className="w-16 h-16 text-red-600" />
+              <div className="bg-white border border-red-100 rounded-3xl p-6 shadow-sm">
+                <img src={studentplayinggame} className="rounded-2xl h-36 w-full object-cover" alt="Students" loading="lazy" />
+                <div className="mt-4 flex items-center gap-3">
+                  <Rocket className="w-5 h-5 text-red-600" />
+                  <h3 className="text-xl font-bold text-slate-900">Tầm Nhìn Của Happy Shine</h3>
+                </div>
+                <p className="mt-2 text-slate-600">Trung tâm tiếng Anh hàng đầu, đồng hành cùng học sinh.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       {/* History Timeline */}
       <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-6">
@@ -122,8 +112,6 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
-      {/* Values */}
-
       {/* <Certificate /> */}
       <Certificate/>
     </div>
