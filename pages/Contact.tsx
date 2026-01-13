@@ -5,12 +5,12 @@ import { MapPin, Phone, Mail, Clock, Send, Sun, User, MessageCircle, Smile } fro
 const Contact: React.FC = () => {
   const locations = [
     {
-      name: "Sunshine Main Campus",
-      address: "123 Sunshine Avenue, Education District, London, UK",
+      name: "Sunshine Quận 7",
+      address: "Số 12, đường 5K, Phường Tân Thuận, TP HCM",
       image: "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=800",
       rep: {
-        name: "Ms. Eleanor Shine",
-        role: "Head of Admissions",
+        name: "Ms. Phương",
+        role: "Đại Diện Quận 7",
         phone: "+44 20 7946 0111",
         avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200"
       },
