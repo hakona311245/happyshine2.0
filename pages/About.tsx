@@ -21,39 +21,38 @@ const About: React.FC = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-red-50/60">
         <div className="container mx-auto px-6">
-          <div className="relative bg-white border border-red-100 rounded-3xl p-8 shadow-sm">
-            <h2 className="text-3xl lg:text-4xl font-fredoka font-bold text-slate-900">Sứ Mệnh & Tầm Nhìn</h2>
-            <Sun className="absolute top-6 right-6 w-8 h-8 text-red-100" aria-hidden="true" />
-          </div>
-          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="bg-white border border-red-100 rounded-3xl shadow-sm overflow-hidden">
-              <img src={studentraisinghand} className="w-full h-64 lg:h-80 object-cover" alt="Center" loading="lazy" />
-              <div className="p-6">
-                <h3 className="text-2xl font-fredoka font-bold text-slate-900">Nuôi dưỡng tư duy của các bé</h3>
-                <p className="mt-2 text-slate-600">qua việc học đầy niềm vui</p>
-              </div>
-            </div>
-            <div className="grid gap-6">
-              <div className="bg-white border border-red-100 rounded-3xl p-6 shadow-sm">
-                <div className="flex items-center gap-3">
-                  <Target className="w-5 h-5 text-red-600" />
-                  <h3 className="text-xl font-bold text-slate-900">Sứ Mệnh Của Happy Shine</h3>
-                </div>
-                <p className="mt-3 text-slate-600">Xóa bỏ rào cản ngôn ngữ bằng những tiết học thú vị, ấm áp.</p>
-              </div>
-              <div className="bg-white border border-red-100 rounded-3xl p-6 shadow-sm">
-                <img src={studentplayinggame} className="rounded-2xl h-36 w-full object-cover" alt="Students" loading="lazy" />
-                <div className="mt-4 flex items-center gap-3">
-                  <Rocket className="w-5 h-5 text-red-600" />
-                  <h3 className="text-xl font-bold text-slate-900">Tầm Nhìn Của Happy Shine</h3>
-                </div>
-                <p className="mt-2 text-slate-600">Trung tâm tiếng Anh hàng đầu, đồng hành cùng học sinh.</p>
-              </div>
-            </div>
+          <div className="relative bg-white border-2 border-red-200 rounded-[2.5rem] p-8 shadow-md">
+            <h2 className="text-3xl lg:text-4xl font-fredoka font-bold text-slate-900 text-center">Sứ Mệnh & Tầm Nhìn</h2>
           </div>
         </div>
+        <div className="container mx-auto px-6">
+        <div className="grid grid-cols-4 auto-rows-[200px] gap-6 mt-12">
+
+          <div className="col-span-2 row-span-2 bg-white rounded-2xl p-6 shadow relative">
+            <div className="absolute top-6 left-0 bg-red-500 text-white px-32 py-10 rounded-r-3xl shadow-md">
+            HAPPY SHINE
+          </div>
+          </div>
+
+                    
+
+          <div className="col-span-2 bg-red-100 rounded-2xl p-6">
+              Top Right
+          </div>
+
+          <div className="bg-red-200 rounded-2xl p-6">
+              Small 1
+          </div>
+
+          <div className="bg-red-300 rounded-2xl p-6">
+              Small 2
+          </div>
+
+        </div>
+      </div>
+        
       </section>
       {/* History Timeline */}
       <section className="py-24 bg-slate-50">

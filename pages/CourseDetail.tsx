@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import StudentAchievements from '../components/StudentAchievements';
 import { courseData } from './Courses';
+import moverclass from '@/media/img/gallery/studentraisinghand.jpg';
 
 const CourseDetail: React.FC = () => {
   const { courseId } = useParams<{ courseId: string }>();
@@ -67,11 +68,11 @@ const CourseDetail: React.FC = () => {
               </p>
             </div>
             <div className="lg:w-1/2">
-              <div className="bg-white p-4 rounded-[2.5rem] shadow-2xl rotate-2">
+              <div className="bg-white p-4 rounded-[2.5rem] shadow-2xl rotate-0">
                 <img 
-                  src={`https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800`} 
+                  src={moverclass} 
                   alt={courseInfo.title} 
-                  className="rounded-[2rem] w-full object-cover h-[350px]"
+                  className="rounded-[2rem] w-full object-cover h-[450px]"
                 />
               </div>
             </div>
