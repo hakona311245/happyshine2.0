@@ -28,25 +28,23 @@ const About: React.FC = () => {
           </div>
         </div>
         <div className="container mx-auto px-6">
-        <div className="grid grid-cols-4 auto-rows-[200px] gap-6 mt-12">
+        <div className="grid grid-cols-4 auto-rows-[150px] gap-6 mt-12">
 
-          <div className="col-span-2 row-span-2 bg-white rounded-2xl p-6 shadow relative">
+          <div className="col-span-4 row-span-1 bg-red-300 rounded-2xl p-6 shadow relative">
             <div className="absolute top-6 left-0 bg-red-500 text-white px-32 py-10 rounded-r-3xl shadow-md">
             HAPPY SHINE
           </div>
           </div>
 
-                    
-
-          <div className="col-span-2 bg-red-100 rounded-2xl p-6">
+          <div className="col-span-2 row-span-3 bg-red-100 rounded-2xl p-6">
               Top Right
           </div>
 
-          <div className="bg-red-200 rounded-2xl p-6">
+          <div className="col-span-2 row-span-2 bg-red-200 rounded-2xl p-6">
               Small 1
           </div>
 
-          <div className="bg-red-300 rounded-2xl p-6">
+          <div className="col-span-2 row-span-1 bg-red-300 rounded-2xl p-6">
               Small 2
           </div>
 

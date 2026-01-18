@@ -10,7 +10,7 @@ export const courseData = [
     num: '01',
     title: 'Kids',
     subtitle: 'Early Explorers',
-    description: 'The fun begins! Using games, songs, and physical activities to introduce English naturally (Ages 4-6).',
+    description: 'Nơi niềm vui bắt đầu! Giúp trẻ làm quen với tiếng Anh qua các hoạt động trò chơi, bài hát và những câu chuyện thú vị.',
     icon: <Smile className="w-8 h-8" />,
     color: 'bg-yellow-400 text-white',
     accent: 'text-yellow-600',
@@ -21,7 +21,7 @@ export const courseData = [
     num: '02',
     title: 'Starters',
     subtitle: 'First Steps',
-    description: 'Building a solid foundation in reading, writing, and speaking through interactive materials.',
+    description: 'Bước đầu tiên cho các bé trong các kỹ năng nghe, nói, đọc và viết cơ bản bằng tiếng Anh.',
     icon: <Star className="w-8 h-8" />,
     color: 'bg-orange-400 text-white',
     accent: 'text-orange-600',
@@ -94,7 +94,7 @@ const Courses: React.FC = () => {
         </div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <h1 className="text-4xl lg:text-6xl font-fredoka font-bold mb-6">The Sunshine Path</h1>
-          <p className="text-xl text-red-100 max-w-2xl mx-auto">Follow our connected learning journey and watch your confidence grow at every step.</p>
+          <p className="text-xl text-red-100 max-w-2xl mx-auto">Đi theo lộ trình của HappyShine thiết kế và xem sự tự tin với tiếng Anh của bé ngày một càng tỏa sáng.</p>
         </div>
       </section>
 

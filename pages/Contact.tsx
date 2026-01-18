@@ -1,30 +1,31 @@
 
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, Send, Sun, User, MessageCircle, Smile } from 'lucide-react';
+import centerq7 from '@/media/img/gallery/centerq7.jpg';
 
 const Contact: React.FC = () => {
   const locations = [
     {
       name: "Sunshine Quận 7",
       address: "Số 12, đường 5K, Phường Tân Thuận, TP HCM",
-      image: "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=800",
+      image: centerq7,
       rep: {
         name: "Ms. Phương",
         role: "Đại Diện Quận 7",
-        phone: "+44 20 7946 0111",
-        avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200"
+        phone: "039 333 3507",
+        avatar: ""
       },
       hours: "Mon - Sat: 8:00 AM - 9:00 PM"
     },
     {
-      name: "Smile Branch - East",
-      address: "45 Harmony Road, Victoria Park, London, UK",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800",
+      name: "Sunshine Quận 6",
+      address: "Số 25 đường 32, Phường Bình Phú, TP HCM",
+      image: centerq7,
       rep: {
-        name: "Mr. Julian Bright",
-        role: "Senior Consultant",
-        phone: "+44 20 7946 0222",
-        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200"
+        name: "Ms. Vy",
+        role: "Dại Diện Quận 6",
+        phone: "093 718 0953",
+        avatar: ""
       },
       hours: "Mon - Fri: 9:00 AM - 8:00 PM"
     }
@@ -38,9 +39,9 @@ const Contact: React.FC = () => {
           <Sun className="w-80 h-80 animate-spin-slow" style={{ animationDuration: '50s' }} />
         </div>
         <div className="container mx-auto px-6 text-center relative z-10">
-          <h1 className="text-5xl lg:text-7xl font-fredoka font-bold mb-6">Say Hello to <span className="text-yellow-300">Sunshine</span></h1>
+          <h1 className="text-5xl lg:text-7xl font-fredoka font-bold mb-6">Gừi lời chào tới <span className="text-yellow-300">HappyShine</span></h1>
           <p className="text-xl text-red-100 max-w-2xl mx-auto">
-            Have questions? We're here to help you find the perfect path for your child's English journey.
+            Bé có thắc mắc? HappyShine có mặt để tìm ra con đường tiếng anh phù hợp với bé nhất.
           </p>
         </div>
       </section>
@@ -49,8 +50,8 @@ const Contact: React.FC = () => {
       <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-fredoka font-bold text-slate-900 mb-4">Visit Our Centers</h2>
-            <p className="text-slate-500">Find the campus closest to you and meet our team.</p>
+            <h2 className="text-4xl font-fredoka font-bold text-slate-900 mb-4">Tới ngay với trung tâm</h2>
+            <p className="text-slate-500">Tìm trung tâm gần bạn nhất và gặp đội ngũ của HappyShine.</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -63,7 +64,7 @@ const Contact: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 min-h-[300px]" 
                   />
                   <div className="absolute top-6 left-6 bg-red-600 text-white px-4 py-2 rounded-full font-bold text-sm shadow-lg">
-                    Campus {i + 1}
+                    Sunshine {i + 1}
                   </div>
                 </div>
                 <div className="md:w-1/2 p-8 flex flex-col justify-between">
@@ -110,13 +111,13 @@ const Contact: React.FC = () => {
             <div className="lg:w-1/2">
               <div className="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-full text-sm font-bold mb-6">
                 <Smile className="w-4 h-4" />
-                <span>Ready to start?</span>
+                <span>Bé đã sẵn sàng bắt đầu chưa?</span>
               </div>
               <h2 className="text-4xl lg:text-5xl font-fredoka font-bold text-slate-900 mb-8">
-                Send us a <span className="text-red-600">Message</span>
+                Gửi ngay <span className="text-red-600">Lời Nhắn</span>
               </h2>
               <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-                Whether it's a question about levels, fees, or scheduling a visit, our team is ready to respond within 24 hours. Let's illuminate your child's future together!
+                Dù là câu hỏi về khóa học, lịch trình hay bất cứ điều gì khác, đội ngũ của HappyShine luôn sẵn sàng hỗ trợ bé. Hãy điền vào mẫu bên dưới và thầy cô sẽ liên hệ với bé trong thời gian sớm nhất.
               </p>
               
               <div className="space-y-6">
@@ -126,7 +127,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Email Support</p>
-                    <p className="font-bold text-slate-900">hello@happyshine.edu</p>
+                    <p className="font-bold text-slate-900">maiduong.happyenglish@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 group">
@@ -134,8 +135,8 @@ const Contact: React.FC = () => {
                     <MessageCircle className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">WhatsApp / Zalo</p>
-                    <p className="font-bold text-slate-900">+44 7946 0958 12</p>
+                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">SĐT / Zalo</p>
+                    <p className="font-bold text-slate-900">093 718 0953</p>
                   </div>
                 </div>
               </div>
@@ -165,7 +166,7 @@ const Contact: React.FC = () => {
                     <label className="text-sm font-bold text-slate-700 ml-2">Interested Level</label>
                     <select className="w-full px-4 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-2 focus:ring-red-600 focus:bg-white transition-all outline-none appearance-none cursor-pointer">
                       <option>Select a course</option>
-                      <option>Kids (Ages 4-6)</option>
+                      <option>Kids</option>
                       <option>Primary (Starters/Movers/Flyers)</option>
                       <option>Academic (KET/PET)</option>
                       <option>IELTS Success</option>
@@ -178,7 +179,7 @@ const Contact: React.FC = () => {
                   </div>
 
                   <button className="w-full group bg-red-600 hover:bg-red-700 text-white font-bold text-xl py-5 rounded-2xl shadow-xl shadow-red-100 transition-all flex items-center justify-center gap-3 active:scale-95 overflow-hidden relative">
-                    <span className="relative z-10">Send Message</span>
+                    <span className="relative z-10">Gửi Ngay</span>
                     <Send className="w-6 h-6 relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-400 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </button>
