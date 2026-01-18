@@ -21,6 +21,10 @@
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
+        @keyframes finish-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
         @keyframes spin-slow {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
@@ -29,12 +33,27 @@
             0%, 100% { transform: scale(1); opacity: 0.8; }
             50% { transform: scale(1.1); opacity: 1; }
         }
+        @keyframes bounce-in-left {
+            0% { opacity: 0; transform: translateX(-60px) scale(0.98); }
+            60% { opacity: 1; transform: translateX(12px) scale(1.02); }
+            80% { transform: translateX(-6px) scale(0.995); }
+            100% { opacity: 1; transform: translateX(0) scale(1); }
+        }
+        @keyframes bounce-in-right {
+            0% { opacity: 0; transform: translateX(60px) scale(0.98); }
+            60% { opacity: 1; transform: translateX(-12px) scale(1.02); }
+            80% { transform: translateX(6px) scale(0.995); }
+            100% { opacity: 1; transform: translateX(0) scale(1); }
+        }
         @keyframes eye-blink {
             0%, 90%, 100% { transform: scaleY(1); }
             95% { transform: scaleY(0.1); }
         }
         .animate-float {
             animation: float 3s ease-in-out infinite;
+        }
+        .animate-finish {
+            animation: finish-pulse 2.6s ease-in-out infinite;
         }
         .animate-spin-slow {
             animation: spin-slow linear infinite;
@@ -44,6 +63,26 @@
         }
         .animate-blink {
             animation: eye-blink 4s infinite;
+        }
+        .reveal-card {
+            opacity: 0;
+            will-change: transform, opacity;
+        }
+        .reveal-left.is-visible {
+            animation: bounce-in-left 0.9s cubic-bezier(0.2, 0.7, 0.2, 1.2) both;
+        }
+        .reveal-right.is-visible {
+            animation: bounce-in-right 0.9s cubic-bezier(0.2, 0.7, 0.2, 1.2) both;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-card {
+                opacity: 1;
+                transform: none;
+            }
+            .reveal-left.is-visible,
+            .reveal-right.is-visible {
+                animation: none;
+            }
         }
         .shine-bg {
             background: radial-gradient(circle at center, #ffffff 0%, #fef2f2 100%);
@@ -61,7 +100,7 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/happyshine2.0/assets/index-7pWyjIR9.js"></script>
+  <script type="module" crossorigin src="/happyshine2.0/assets/index-DKxQx7jA.js"></script>
 </head>
 <body class="bg-white text-slate-900 overflow-x-hidden">
     <div id="root"></div>
