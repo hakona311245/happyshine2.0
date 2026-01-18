@@ -32,7 +32,7 @@ const About: React.FC = () => {
 
           <div className="col-span-4 row-span-1 bg-red-300 rounded-2xl p-6 shadow relative">
             <div className="absolute top-6 left-0 bg-red-500 text-white px-32 py-10 rounded-r-3xl shadow-md">
-            HAPPY SHINE
+            Sứ mệnh của HappyShine
           </div>
           </div>
 

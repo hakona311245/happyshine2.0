@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Sun, Star, ArrowRight, Smile, Rocket, Wind, Key, CheckCircle, GraduationCap, Flag } from 'lucide-react';
 import StudentAchievements from '../components/StudentAchievements';
@@ -85,6 +85,31 @@ export const courseData = [
 ];
 
 const Courses: React.FC = () => {
+  useEffect(() => {
+    const elements = Array.from(document.querySelectorAll('.reveal-card'));
+
+    if (!('IntersectionObserver' in window)) {
+      elements.forEach((el) => el.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -10% 0px', threshold: 0.2 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="bg-white min-h-screen">
       {/* Header */}
@@ -116,7 +141,9 @@ const Courses: React.FC = () => {
                   
                   {/* Card Content */}
                   <div className="w-full lg:w-5/12">
-                    <div className={`bg-white p-8 rounded-[2rem] shadow-xl border-2 border-slate-50 hover:border-red-600 transition-all group relative ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
+                    <div
+                      className={`reveal-card ${index % 2 === 0 ? 'reveal-left lg:text-right' : 'reveal-right lg:text-left'} bg-white p-8 rounded-[2rem] shadow-xl border-2 border-slate-50 hover:border-red-600 transition-all group relative`}
+                    >
                       <div className={`flex items-center gap-3 mb-4 ${index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
                         <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">{level.tag}</span>
                         <span className="text-2xl font-black text-red-600/10 font-fredoka">{level.num}</span>
@@ -148,9 +175,9 @@ const Courses: React.FC = () => {
 
             {/* Path End Marker */}
             <div className="mt-20 flex justify-center relative z-10">
-              <div className="bg-slate-900 text-white p-6 rounded-3xl flex flex-col items-center shadow-2xl animate-float">
+              <div className="bg-slate-900 text-white p-6 rounded-3xl flex flex-col items-center shadow-2xl animate-finish">
                 <Flag className="w-10 h-10 mb-2" />
-                <span className="font-bold">Goal Achieved!</span>
+                <span className="font-bold">Chặng đường còn dài!</span>
               </div>
             </div>
           </div>
@@ -164,10 +191,10 @@ const Courses: React.FC = () => {
       <section className="py-24 bg-red-600 overflow-hidden relative">
         <div className="container mx-auto px-6 text-center relative z-10">
           <GraduationCap className="w-20 h-20 text-white mx-auto mb-8 animate-float" />
-          <h2 className="text-4xl lg:text-5xl font-fredoka font-bold text-white mb-8">Ready to Start the Path?</h2>
+          <h2 className="text-4xl lg:text-5xl font-fredoka font-bold text-white mb-8">Bé sẵn sàng đồng hành cùng HappyShine chưa nào?</h2>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link to="/enroll" className="bg-white text-red-600 font-bold text-xl px-12 py-5 rounded-full shadow-2xl hover:scale-105 transition-all text-center">
-              Join Level Assessment
+              Đăng ký đánh giá năng lực miễn phí ngay!
             </Link>
           </div>
         </div>

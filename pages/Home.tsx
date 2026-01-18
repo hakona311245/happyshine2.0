@@ -214,7 +214,7 @@ const Home: React.FC = () => {
               </Link>
             </div>
             <div className="mt-12 lg:mt-0 relative z-10">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600" alt="Consultation" className="rounded-3xl shadow-2xl border-8 border-white w-full max-w-sm rotate-3" />
+              <img src={raisehands} alt="Consultation" className="rounded-3xl shadow-2xl border-8 border-white w-full max-w-sm rotate-3" />
             </div>
             {/* Background elements */}
             <div className="absolute top-[-50%] right-[-10%] w-[500px] h-[500px] bg-red-50 rounded-full z-0"></div>
