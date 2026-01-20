@@ -28,24 +28,38 @@ const About: React.FC = () => {
           </div>
         </div>
         <div className="container mx-auto px-6">
-        <div className="grid grid-cols-4 auto-rows-[150px] gap-6 mt-12">
+        <div className="grid grid-cols-4 auto-rows-[180px] gap-4 mt-8 max-w-6xl mx-auto">
 
-          <div className="col-span-4 row-span-1 bg-red-300 rounded-2xl p-6 shadow relative">
-            <div className="absolute top-6 left-0 bg-red-500 text-white px-32 py-10 rounded-r-3xl shadow-md">
-            Sứ mệnh của HappyShine
-          </div>
-          </div>
-
-          <div className="col-span-2 row-span-3 bg-red-100 rounded-2xl p-6">
-              Top Right
+          <div className="col-span-4 row-span-1 bg-red-600 rounded-2xl p-6 shadow flex items-center justify-center text-center">
+            <h3 className="text-3xl md:text-4xl font-fredoka font-black text-white tracking-wide">
+              Shine Bright
+            </h3>
           </div>
 
-          <div className="col-span-2 row-span-2 bg-red-200 rounded-2xl p-6">
-              Small 1
+          <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-md border-[10px] border-yellow-300 relative">
+            <span className="absolute top-0 right-0 w-20 h-10 bg-yellow-300 rounded-bl-2xl shadow-md">
+            </span>
+            <img
+              src={studentraisinghand}
+              alt="Student raising hand"
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
           </div>
 
-          <div className="col-span-2 row-span-1 bg-red-300 rounded-2xl p-6">
-              Small 2
+          <div className="col-span-2 row-span-1 rounded-2xl overflow-hidden shadow-md">
+            <img
+              src={studentplayinggame}
+              alt="Students playing a game"
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div className="col-span-2 row-span-1 bg-yellow-400 rounded-2xl p-6 border border-red-100 flex items-center justify-center">
+            <h3 className="text-3xl md:text-4xl font-fredoka font-black text-white tracking-wide">HappyShine tin rằng mỗi đứa trẻ đều có tiềm năng tỏa sáng rực rỡ.
+
+            </h3>
           </div>
 
         </div>
