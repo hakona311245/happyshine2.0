@@ -47,7 +47,7 @@ const Home: React.FC = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden pb-16 sm:pb-20 lg:pb-0">
         {/* Cartoon Sun Background Element */}
         <div className="absolute -top-10 -left-10 lg:top-0 lg:left-0 opacity-40 lg:opacity-60 z-0">
           <CartoonSun />
@@ -105,7 +105,7 @@ const Home: React.FC = () => {
               <span className="text-2xl font-bold text-red-600">98%</span>
               <span className="text-xs text-slate-500 font-bold uppercase tracking-widest text-center">Success Rate</span>
             </div>*/}
-            <div className="absolute -bottom-6 -left-6 w-52 h-24 bg-white rounded-2xl shadow-xl flex items-center space-x-4 p-4 z-20">
+            <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 lg:-bottom-6 lg:-left-6 w-52 h-24 bg-white rounded-2xl shadow-xl flex items-center space-x-4 p-4 z-20">
               <div className="bg-green-100 p-2 rounded-full">
                 <Smile className="w-8 h-8 text-green-600" />
               </div>
