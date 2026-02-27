@@ -57,7 +57,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="col-span-2 row-span-1 bg-yellow-400 rounded-2xl p-6 border border-red-100 flex items-center justify-center">
-            <h3 className="text-3xl md:text-4xl font-fredoka font-black text-white tracking-wide">HappyShine tin rằng mỗi đứa trẻ đều có tiềm năng tỏa sáng rực rỡ.
+            <h3 className="text-center font-fredoka font-black text-white tracking-wide leading-tight break-words text-balance text-[clamp(1rem,4.8vw,2.25rem)]">HappyShine tin rằng mỗi đứa trẻ đều có tiềm năng tỏa sáng rực rỡ.
 
             </h3>
           </div>
