@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Sun, Star, CheckCircle, ArrowRight, Play, Users, Award, Smile } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -123,7 +122,8 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-fredoka font-bold text-white mb-4">Sự khác biệt ở HappyShine</h2>
-            <p className="text-red-100 text-xl max-w-2xl mx-auto">Một môi trường học tập nhẹ nhàng và tích cực, nơi học viên có thể phát triển kỹ năng ngôn ngữ một cách tự nhiên</p>
+            <p className="text-red-100 text-xl max-w-2xl mx-auto">Một môi trường học 
+              tập nhẹ nhàng và tích cực, nơi học viên có thể phát triển kỹ năng ngôn ngữ một cách tự nhiên</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
