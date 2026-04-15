@@ -1,7 +1,8 @@
 import React from 'react';
-import { FileText, Shield, Scale, Briefcase, Landmark, CheckSquare, Download, Sun, ArrowLeft, ExternalLink } from 'lucide-react';
+import { FileText, Shield, Scale, Briefcase, Landmark, CheckSquare, Download, Sun, ArrowLeft, ExternalLink, Users, ArrowLeftRight, BadgeCheck, SquareChartGantt  } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import directorRecognitionPdf from '../media/giayto/hosophaply/quyetdinh_congnhan_giamdoc.pdf';
+import ttchungvecosogiaoducq6 from '../media/giayto/thongtincongkhai/quan6/CKHAI_TTCHUNGVE_COSO_GIAODUC(Q6).pdf';
+import ttchungvecosogiaoducq7 from '../media/giayto/thongtincongkhai/CKHAI_THONGTIN_CHUNG_COSO.pdf';
 import businessRegistrationPdf from '../media/giayto/hosophaply/giay_chungnhan_dky_doanhnghiep.pdf';
 import centerEstablishmentPdf from '../media/giayto/hosophaply/quyetdinh_thanhlap_trungtam.pdf';
 
@@ -22,22 +23,40 @@ const CongKhaiThongTin: React.FC = () => {
       title: "Công khai thông tin chung về cơ sở giáo dục",
       icon: <Shield className="w-8 h-8 text-red-600" />,
       docs: [
-        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: businessRegistrationPdf },
-        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: businessRegistrationPdf },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: ttchungvecosogiaoducq6 },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: ttchungvecosogiaoducq7 },
       ]
     },
     {
-      title: "Quyáº¿t Ä‘á»‹nh vá» viá»‡c cÃ´ng nháº­n GiÃ¡m Ä‘á»‘c Trung TÃ¢m ngoáº¡i ngá»¯ Tá»a SÃ¡ng Háº¡nh PhÃºc 1",
-      icon: <Briefcase className="w-8 h-8 text-red-600" />,
+      title: "Công khai thông tin thu, chi tài chính",
+      icon: <ArrowLeftRight className="w-8 h-8 text-red-600" />,
       docs: [
-        { name: "Quyáº¿t Ä‘á»‹nh cÃ´ng nháº­n GiÃ¡m Ä‘á»‘c", file: directorRecognitionPdf }
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: ttchungvecosogiaoducq6 },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: ttchungvecosogiaoducq6 },
       ]
     },
     {
-      title: "Quyáº¿t Ä‘á»‹nh vá» viá»‡c cho phÃ©p thÃ nh láº­p Trung tÃ¢m ngoáº¡i ngá»¯ Tá»a SÃ¡ng Háº¡nh PhÃºc 1",
-      icon: <Landmark className="w-8 h-8 text-red-600" />,
+      title: "Công khai điều kiện bảo đảm chất lượng hoạt động giáo dục thường xuyên",
+      icon: <BadgeCheck className="w-8 h-8 text-red-600" />,
       docs: [
-        { name: "Quyáº¿t Ä‘á»‹nh thÃ nh láº­p Trung tÃ¢m", file: centerEstablishmentPdf }
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: centerEstablishmentPdf },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: centerEstablishmentPdf },
+      ]
+    },
+    {
+      title: "Công khai kế hoạch và kết quả hoạt động giáo dục thường xuyên",
+      icon: <SquareChartGantt className="w-8 h-8 text-red-600" />,
+      docs: [
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: centerEstablishmentPdf },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: centerEstablishmentPdf },
+      ]
+    },
+    {
+      title: "Công khai danh sách nhân viên",
+      icon: <Users className="w-8 h-8 text-red-600" />,
+      docs: [
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: centerEstablishmentPdf },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: centerEstablishmentPdf },
       ]
     }
   ];
