@@ -6,7 +6,7 @@
       const env = loadEnv(mode, '.', '');
 
       return {
-        base: '/happyshine2.0/',
+        base: '/',
 
         server: {
           port: 3000,
