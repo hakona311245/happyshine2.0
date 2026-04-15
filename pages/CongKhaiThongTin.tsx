@@ -1,8 +1,18 @@
 import React from 'react';
-import { FileText, Shield, Scale, Briefcase, Landmark, CheckSquare, Download, Sun, ArrowLeft, ExternalLink, Users, ArrowLeftRight, BadgeCheck, SquareChartGantt  } from 'lucide-react';
+import { FileText, Shield, Scale, Briefcase, Landmark, CheckSquare, Download, Sun, ArrowLeft, ExternalLink, Users, ArrowLeftRight, BadgeCheck, SquareChartGantt, GraduationCap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ttchungvecosogiaoducq6 from '../media/giayto/thongtincongkhai/quan6/CKHAI_TTCHUNGVE_COSO_GIAODUC(Q6).pdf';
 import ttchungvecosogiaoducq7 from '../media/giayto/thongtincongkhai/CKHAI_THONGTIN_CHUNG_COSO.pdf';
+import ttthuchiq6 from '../media/giayto/thongtincongkhai/quan6/CKHAI_TT_THU_CHI_TAICHINH(Q6).pdf';
+import ttthuchiq7 from '../media/giayto/thongtincongkhai/CKHAI_TT_THU_CHI_TAICHINH.pdf';
+import dambaochatluongq6 from '../media/giayto/thongtincongkhai/quan6/CKHAI_DAMBAO_CHATLUONG(Q6).pdf';
+import dambaochatluongq7 from '../media/giayto/thongtincongkhai/CKHAI_DAMBAO_CHATLUONG.pdf';
+import kquakehoachgiaoducq6 from '../media/giayto/thongtincongkhai/quan6/CKHAI_KEHOACH_KQUA_HOATDONG(Q6).pdf';
+import kquakehoachgiaoducq7 from '../media/giayto/thongtincongkhai/CKHAI_KEHOACH_HOATDONG.pdf';
+import danhsachnhanvienq6 from '../media/giayto/thongtincongkhai/quan6/CKHAI_DSNV(Q6).pdf';
+import danhsachnhanvienq7 from '../media/giayto/thongtincongkhai/CKHAI_DS_NV.pdf';
+import danhsachgiaovienq6 from '../media/giayto/thongtincongkhai/quan6/CKHAI_DS_GV(Q6).pdf';
+import danhsachgiaovienq7 from '../media/giayto/thongtincongkhai/CKHAI_DS_GV.pdf';
 import businessRegistrationPdf from '../media/giayto/hosophaply/giay_chungnhan_dky_doanhnghiep.pdf';
 import centerEstablishmentPdf from '../media/giayto/hosophaply/quyetdinh_thanhlap_trungtam.pdf';
 
@@ -31,32 +41,40 @@ const CongKhaiThongTin: React.FC = () => {
       title: "Công khai thông tin thu, chi tài chính",
       icon: <ArrowLeftRight className="w-8 h-8 text-red-600" />,
       docs: [
-        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: ttchungvecosogiaoducq6 },
-        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: ttchungvecosogiaoducq6 },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: ttthuchiq6 },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: ttthuchiq7 },
       ]
     },
     {
       title: "Công khai điều kiện bảo đảm chất lượng hoạt động giáo dục thường xuyên",
       icon: <BadgeCheck className="w-8 h-8 text-red-600" />,
       docs: [
-        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: centerEstablishmentPdf },
-        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: centerEstablishmentPdf },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: dambaochatluongq6 },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: dambaochatluongq7 },
       ]
     },
     {
       title: "Công khai kế hoạch và kết quả hoạt động giáo dục thường xuyên",
       icon: <SquareChartGantt className="w-8 h-8 text-red-600" />,
       docs: [
-        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: centerEstablishmentPdf },
-        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: centerEstablishmentPdf },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: kquakehoachgiaoducq6 },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: kquakehoachgiaoducq7 },
       ]
     },
     {
       title: "Công khai danh sách nhân viên",
       icon: <Users className="w-8 h-8 text-red-600" />,
       docs: [
-        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: centerEstablishmentPdf },
-        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: centerEstablishmentPdf },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: danhsachnhanvienq6 },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: danhsachnhanvienq7 },
+      ]
+    },
+        {
+      title: "Công khai danh sách giáo viên",
+      icon: <GraduationCap className="w-8 h-8 text-red-600" />,
+      docs: [
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: danhsachgiaovienq6 },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: danhsachgiaovienq7 },
       ]
     }
   ];
