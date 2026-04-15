@@ -1,6 +1,5 @@
 {
     "name": "happy-shine-english-center",
-    "homepage": "https://happyshine.vn",
     "private": true,
     "version": "0.0.0",
     "type": "module",
@@ -9,7 +8,6 @@
         "build": "vite build",
         "preview": "vite preview",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d dist --repo https://github.com/hakona311245/happyshine2.0.git --cname happyshine.vn"
     },
     "dependencies": {
         "lucide-react": "^0.562.0",
