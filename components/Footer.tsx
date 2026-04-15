@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
             </div>
             <ul className="space-y-4 text-slate-400">
               <li><Link to="/legal-paper" className="hover:text-red-500 transition-colors">Hồ Sơ Pháp Lý</Link></li>
-              <li><a href="#" className="hover:text-red-500 transition-colors">Công Khai Thông Tin</a></li>
+              <li><Link to="/cong-khai-thong-tin" className="hover:text-red-500 transition-colors">Công Khai Thông Tin</Link></li>
             </ul>
           </div>
 

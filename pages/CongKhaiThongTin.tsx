@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { FileText, Shield, Scale, Briefcase, Landmark, CheckSquare, Download, Sun, ArrowLeft, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -17,27 +16,28 @@ type DocumentCategory = {
   docs: LegalDocument[];
 };
 
-const LegalPaper: React.FC = () => {
+const CongKhaiThongTin: React.FC = () => {
   const documentCategories: DocumentCategory[] = [
         {
-      title: "GIÁY CHỨNG NHẬN ĐĂNG KÝ DOANH NGHIỆP",
+      title: "Công khai thông tin chung về cơ sở giáo dục",
       icon: <Shield className="w-8 h-8 text-red-600" />,
       docs: [
-        { name: "GIÁY CHỨNG NHẬN ĐĂNG KÝ DOANH NGHIỆP", file: businessRegistrationPdf }
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc", file: businessRegistrationPdf },
+        { name: "Trung tâm Anh ngữ Tỏa Sáng Hạnh Phúc 1", file: businessRegistrationPdf },
       ]
     },
     {
-      title: "Quyết định về việc công nhận Giám đốc Trung Tâm ngoại ngữ Tỏa Sáng Hạnh Phúc 1",
+      title: "Quyáº¿t Ä‘á»‹nh vá» viá»‡c cÃ´ng nháº­n GiÃ¡m Ä‘á»‘c Trung TÃ¢m ngoáº¡i ngá»¯ Tá»a SÃ¡ng Háº¡nh PhÃºc 1",
       icon: <Briefcase className="w-8 h-8 text-red-600" />,
       docs: [
-        { name: "Quyết định công nhận Giám đốc", file: directorRecognitionPdf }
+        { name: "Quyáº¿t Ä‘á»‹nh cÃ´ng nháº­n GiÃ¡m Ä‘á»‘c", file: directorRecognitionPdf }
       ]
     },
     {
-      title: "Quyết định về việc cho phép thành lập Trung tâm ngoại ngữ Tỏa Sáng Hạnh Phúc 1",
+      title: "Quyáº¿t Ä‘á»‹nh vá» viá»‡c cho phÃ©p thÃ nh láº­p Trung tÃ¢m ngoáº¡i ngá»¯ Tá»a SÃ¡ng Háº¡nh PhÃºc 1",
       icon: <Landmark className="w-8 h-8 text-red-600" />,
       docs: [
-        { name: "Quyết định thành lập Trung tâm", file: centerEstablishmentPdf }
+        { name: "Quyáº¿t Ä‘á»‹nh thÃ nh láº­p Trung tÃ¢m", file: centerEstablishmentPdf }
       ]
     }
   ];
@@ -50,9 +50,9 @@ const LegalPaper: React.FC = () => {
           <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-6 font-bold">
             <ArrowLeft className="mr-2 w-5 h-5" /> Back Home
           </Link>
-          <h1 className="text-4xl lg:text-6xl font-fredoka font-bold mb-4 text-center lg:text-left">Hồ Sơ Pháp Lý</h1>
+          <h1 className="text-4xl lg:text-6xl font-fredoka font-bold mb-4 text-center lg:text-left">Công Khai Thông Tin</h1>
           <p className="text-xl text-red-100 max-w-2xl text-center lg:text-left">
-            Happy Shine cam kết minh bạch hoàn toàn và đạt tiêu chuẩn xuất sắc trong giáo dục. Truy cập các tài liệu pháp lý chính thức của Happy Shine bên dưới.
+            Công khai theo Thông tư 09/2024/TT-BGDĐT ngày 03 tháng 6 năm 2024 và các quy định liên quan.
           </p>
         </div>
         <Sun className="absolute -top-20 -right-20 w-80 h-80 text-white/10 animate-spin-slow" />
@@ -115,10 +115,10 @@ const LegalPaper: React.FC = () => {
       <section className="container mx-auto px-6 mt-20">
         <div className="max-w-4xl mx-auto bg-white rounded-[2rem] p-10 text-center border-2 border-dashed border-red-200">
           <Landmark className="w-12 h-12 text-red-600 mx-auto mb-4" />
-          <h3 className="text-2xl font-fredoka font-bold mb-4">Chứng nhận chính thức</h3>
+          <h3 className="text-2xl font-fredoka font-bold mb-4">Thông Tin Minh Bạch</h3>
           <p className="text-slate-600 leading-relaxed">
             Tất cả các tài liệu được liệt kê ở trên đều đã được xác minh bởi cơ quan chức năng có liên quan.
-            Để giải đáp các thắc mắc cụ thể về quy định, vui lòng đến Cơ sở chính của Happy Shine trong giờ hành chính hoặc liên hệ với bộ phận tuân thủ. 
+            Để giải đáp các thắc mắc cụ thể về quy định, vui lòng đến Cơ sở chính của Happy Shine trong giờ hành chính hoặc liên hệ với bộ phận tuân thủ.
             <span className="font-bold text-red-600"> happyshineenglish@gmail.com</span>.
           </p>
         </div>
@@ -127,4 +127,4 @@ const LegalPaper: React.FC = () => {
   );
 };
 
-export default LegalPaper;
+export default CongKhaiThongTin;
