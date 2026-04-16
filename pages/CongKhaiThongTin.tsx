@@ -9,10 +9,10 @@ import dambaochatluongq6 from '../media/giayto/thongtincongkhai/quan6/CKHAI_DAMB
 import dambaochatluongq7 from '../media/giayto/thongtincongkhai/CKHAI_DAMBAO_CHATLUONG.pdf';
 import kquakehoachgiaoducq6 from '../media/giayto/thongtincongkhai/quan6/CKHAI_KEHOACH_KQUA_HOATDONG(Q6).pdf';
 import kquakehoachgiaoducq7 from '../media/giayto/thongtincongkhai/CKHAI_KEHOACH_HOATDONG.pdf';
-import danhsachnhanvienq6 from '../media/giayto/thongtincongkhai/quan6/CKHAI_DSNV(Q6).pdf';
-import danhsachnhanvienq7 from '../media/giayto/thongtincongkhai/CKHAI_DS_NV.pdf';
-import danhsachgiaovienq6 from '../media/giayto/thongtincongkhai/quan6/CKHAI_DS_GV(Q6).pdf';
-import danhsachgiaovienq7 from '../media/giayto/thongtincongkhai/CKHAI_DS_GV.pdf';
+import danhsachnhanvienq6 from '../media/giayto/thongtincongkhai/quan6/CKHAI_DSNV(Q6)_2026.pdf';
+import danhsachnhanvienq7 from '../media/giayto/thongtincongkhai/CKHAI_DS_NV_2026.pdf';
+import danhsachgiaovienq6 from '../media/giayto/thongtincongkhai/quan6/CKHAI_DS_GV(Q6)_2026.pdf';
+import danhsachgiaovienq7 from '../media/giayto/thongtincongkhai/CKHAI_DS_GV_2026.pdf';
 import businessRegistrationPdf from '../media/giayto/hosophaply/giay_chungnhan_dky_doanhnghiep.pdf';
 import centerEstablishmentPdf from '../media/giayto/hosophaply/quyetdinh_thanhlap_trungtam.pdf';
 
