@@ -13,8 +13,6 @@ import danhsachnhanvienq6 from '../media/giayto/thongtincongkhai/quan6/CKHAI_DSN
 import danhsachnhanvienq7 from '../media/giayto/thongtincongkhai/CKHAI_DS_NV_2026.pdf';
 import danhsachgiaovienq6 from '../media/giayto/thongtincongkhai/quan6/CKHAI_DS_GV(Q6)_2026.pdf';
 import danhsachgiaovienq7 from '../media/giayto/thongtincongkhai/CKHAI_DS_GV_2026.pdf';
-import businessRegistrationPdf from '../media/giayto/hosophaply/giay_chungnhan_dky_doanhnghiep.pdf';
-import centerEstablishmentPdf from '../media/giayto/hosophaply/quyetdinh_thanhlap_trungtam.pdf';
 
 type LegalDocument = {
   name: string;
@@ -156,7 +154,7 @@ const CongKhaiThongTin: React.FC = () => {
           <p className="text-slate-600 leading-relaxed">
             Tất cả các tài liệu được liệt kê ở trên đều đã được xác minh bởi cơ quan chức năng có liên quan.
             Để giải đáp các thắc mắc cụ thể về quy định, vui lòng đến Cơ sở chính của Happy Shine trong giờ hành chính hoặc liên hệ với bộ phận tuân thủ.
-            <span className="font-bold text-red-600"> happyshineenglish@gmail.com</span>.
+            <span className="font-bold text-[#BB2A31]"> happyshineenglish@gmail.com</span>.
           </p>
         </div>
       </section>
