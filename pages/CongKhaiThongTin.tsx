@@ -80,7 +80,7 @@ const CongKhaiThongTin: React.FC = () => {
   return (
     <div className="bg-slate-50 min-h-screen pb-24">
       {/* Header */}
-      <section className="bg-red-600 py-20 text-white relative overflow-hidden">
+      <section className="bg-[#BB2A31] py-20 text-white relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <Link to="/" className="inline-flex items-center text-white/80 hover:text-white mb-6 font-bold">
             <ArrowLeft className="mr-2 w-5 h-5" /> Back Home

@@ -118,7 +118,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-red-600">
+      <section className="py-24 bg-[#BB2A31]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-fredoka font-bold text-white mb-4">Sự khác biệt ở HappyShine</h2>

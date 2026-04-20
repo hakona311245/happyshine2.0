@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Sun, Target, Rocket, Heart, Award, Smile, ShieldCheck } from 'lucide-react';
 import StudentAchievements from '../components/StudentAchievements';
@@ -7,16 +6,103 @@ import studentplayinggame from '@/media/img/gallery/studentplayinggame.jpg';
 import Certificate from '@/components/certificate';
 
 const About: React.FC = () => {
+  const timelineItems = [
+    {
+      year: '2012',
+      title: 'The First Spark',
+      desc: 'Happy Shine began as a small classroom with a few students and dedicated teachers.',
+    },
+    {
+      year: '2015',
+      title: 'Growing Brighter',
+      desc: 'The center expanded and welcomed more young learners into a joyful English environment.',
+    },
+    {
+      year: '2018',
+      title: 'Global Recognition',
+      desc: 'Happy Shine gained wider recognition for creative teaching and student-centered learning.',
+    },
+    {
+      year: '2022',
+      title: 'Digital Dawn',
+      desc: 'A modern digital learning approach was introduced to support students more flexibly.',
+    },
+    {
+      year: '2024',
+      title: 'The Sunshine Hub',
+      desc: 'Happy Shine stepped into a new chapter with a larger, more advanced learning space.',
+    },
+  ];
+
+  const [activeTimelineIndex, setActiveTimelineIndex] = React.useState(0);
+  const [timelineDirection, setTimelineDirection] = React.useState<1 | -1>(1);
+  const [isTimelineAnimating, setIsTimelineAnimating] = React.useState(false);
+  const timelineTimerRef = React.useRef<number | null>(null);
+
+  const changeTimelineStage = (nextIndex: number) => {
+    if (
+      nextIndex < 0 ||
+      nextIndex >= timelineItems.length ||
+      nextIndex === activeTimelineIndex ||
+      isTimelineAnimating
+    ) {
+      return;
+    }
+
+    setTimelineDirection(nextIndex > activeTimelineIndex ? 1 : -1);
+    setIsTimelineAnimating(true);
+
+    if (timelineTimerRef.current) {
+      window.clearTimeout(timelineTimerRef.current);
+    }
+
+    timelineTimerRef.current = window.setTimeout(() => {
+      setActiveTimelineIndex(nextIndex);
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsTimelineAnimating(false);
+        });
+      });
+    }, 180);
+  };
+
+  React.useEffect(() => {
+    return () => {
+      if (timelineTimerRef.current) {
+        window.clearTimeout(timelineTimerRef.current);
+      }
+    };
+  }, []);
+
+  const handleTimelineKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      changeTimelineStage(activeTimelineIndex + 1);
+    }
+
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      changeTimelineStage(activeTimelineIndex - 1);
+    }
+  };
+
+  const activeTimelineItem = timelineItems[activeTimelineIndex];
+  const timelineProgress =
+    timelineItems.length > 1
+      ? (activeTimelineIndex / (timelineItems.length - 1)) * 100
+      : 0;
+
   return (
     <div className="bg-white">
       {/* Page Header */}
       <section className="py-20 bg-red-600 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 p-20 opacity-10">
-            <Sun className="w-96 h-96 animate-spin-slow" style={{ animationDuration: '60s' }} />
+          <Sun className="w-96 h-96 animate-spin-slow" style={{ animationDuration: '60s' }} />
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">
           <h1 className="text-5xl lg:text-6xl font-fredoka font-bold mb-6">Câu Chuyện của Happy Shine</h1>
-          <p className="text-xl text-red-100 max-w-3xl mx-auto">Happy Shine được thành lập với niềm tin rằng việc học ngôn ngữ nên tự nhiên và mang lại niềm vui, như chính nụ cười của trẻ.</p>
+          <p className="text-xl text-red-100 max-w-3xl mx-auto">Happy Shine là một tổ chức giáo dục được thành lập với niềm tin rằng việc học ngôn ngữ nên tự nhiên và mang lại niềm vui, như chính nụ cười của trẻ em.</p>
         </div>
       </section>
 
@@ -28,73 +114,155 @@ const About: React.FC = () => {
           </div>
         </div>
         <div className="container mx-auto px-6">
-        <div className="grid grid-cols-4 auto-rows-[180px] gap-4 mt-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-4 auto-rows-[180px] gap-4 mt-8 max-w-6xl mx-auto">
+            <div className="col-span-4 row-span-1 bg-red-600 rounded-2xl p-6 shadow flex items-center justify-center text-center">
+              <h3 className="text-3xl md:text-4xl font-fredoka font-black text-white tracking-wide">
+                Shine Bright
+              </h3>
+            </div>
 
-          <div className="col-span-4 row-span-1 bg-red-600 rounded-2xl p-6 shadow flex items-center justify-center text-center">
-            <h3 className="text-3xl md:text-4xl font-fredoka font-black text-white tracking-wide">
-              Shine Bright
-            </h3>
+            <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-md border-[10px] border-yellow-300 relative">
+              <span className="absolute top-0 right-0 w-20 h-10 bg-yellow-300 rounded-bl-2xl shadow-md">
+              </span>
+              <img
+                src={studentraisinghand}
+                alt="Student raising hand"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="col-span-2 row-span-1 rounded-2xl overflow-hidden shadow-md">
+              <img
+                src={studentplayinggame}
+                alt="Students playing a game"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            <div className="col-span-2 row-span-1 bg-yellow-400 rounded-2xl p-6 border border-red-100 flex items-center justify-center">
+              <h3 className="text-center font-fredoka font-black text-white tracking-wide leading-tight break-words text-balance text-[clamp(1rem,4.8vw,2.25rem)]">HappyShine tin rằng mỗi đứa trẻ đều có tiềm năng tỏa sáng.
+
+              </h3>
+            </div>
           </div>
-
-          <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-md border-[10px] border-yellow-300 relative">
-            <span className="absolute top-0 right-0 w-20 h-10 bg-yellow-300 rounded-bl-2xl shadow-md">
-            </span>
-            <img
-              src={studentraisinghand}
-              alt="Student raising hand"
-              className="h-full w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-
-          <div className="col-span-2 row-span-1 rounded-2xl overflow-hidden shadow-md">
-            <img
-              src={studentplayinggame}
-              alt="Students playing a game"
-              className="h-full w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-
-          <div className="col-span-2 row-span-1 bg-yellow-400 rounded-2xl p-6 border border-red-100 flex items-center justify-center">
-            <h3 className="text-center font-fredoka font-black text-white tracking-wide leading-tight break-words text-balance text-[clamp(1rem,4.8vw,2.25rem)]">HappyShine tin rằng mỗi đứa trẻ đều có tiềm năng tỏa sáng rực rỡ.
-
-            </h3>
-          </div>
-
         </div>
-      </div>
-        
       </section>
+
       {/* History Timeline */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-slate-50" onKeyDown={handleTimelineKeyDown}>
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-fredoka font-bold text-slate-900">Hành Trình Vươn Lên Của Happy Shine</h2>
+            <h2 className="text-4xl font-fredoka font-bold text-slate-900">Happy Shine Timeline</h2>
+            <p className="mt-4 text-base text-slate-500 md:text-lg">
+              Move across the timeline with the side arrows, click any time mark, or use the left and right arrow keys.
+            </p>
           </div>
-          <div className="relative space-y-12">
-            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-red-200 -translate-x-1/2 hidden md:block"></div>
-            {[
-              { year: '2012', title: 'Ánh nắng đầu tiên', desc: 'Happy Shine là một lớp học nho nhỏ với vài bé học sinh và các thầy cô tận tâm' },
-              { year: '2015', title: 'Bắt đầu tỏa sáng', desc: 'Happy Shine bắt đầu mở rộng tiếp đón nhiều bé hơn' },
-              { year: '2018', title: 'Global Recognition', desc: 'Voted "Most Innovative English Center" by the International Education Board.' },
-              { year: '2022', title: 'Digital Dawn', desc: 'Launched our high-end digital learning platform reaching students globally.' },
-              { year: '2024', title: 'The Sunshine Hub', desc: 'Opening our state-of-the-art mega campus in the city center.' },
-            ].map((item, i) => (
-              <div key={i} className={`flex flex-col md:flex-row items-center gap-8 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                <div className="flex-1 text-center md:text-left">
-                  <div className={`p-8 bg-white rounded-3xl shadow-lg border-b-4 border-red-600 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                    <span className="text-3xl font-bold text-red-600 mb-2 block">{item.year}</span>
-                    <h4 className="text-xl font-bold mb-2 text-slate-900">{item.title}</h4>
-                    <p className="text-slate-600">{item.desc}</p>
+
+          <div className="mx-auto max-w-6xl rounded-[2rem] border border-red-100 bg-white p-6 shadow-[0_24px_70px_-32px_rgba(185,33,41,0.35)] md:p-8 lg:p-10">
+            <div className="flex flex-col gap-10">
+              <div className="rounded-[1.75rem] border border-red-100 bg-slate-50/80 p-5 md:p-6">
+                <div className="overflow-x-auto pb-2">
+                  <div className="relative mx-auto min-w-[560px] px-4 md:px-6">
+                    <div className="absolute left-6 right-6 top-5 h-1 -translate-y-1/2 rounded-full bg-red-100" />
+                    <div
+                      className="absolute left-6 top-5 h-1 -translate-y-1/2 rounded-full bg-red-600 transition-all duration-500 ease-out"
+                      style={{ width: `calc((100% - 3rem) * ${timelineProgress / 100})` }}
+                    />
+
+                    <div className="relative flex items-start justify-between gap-4">
+                      {timelineItems.map((item, index) => {
+                        const isActive = index === activeTimelineIndex;
+
+                        return (
+                          <button
+                            key={item.year}
+                            type="button"
+                            onClick={() => changeTimelineStage(index)}
+                            aria-label={`Go to ${item.year}`}
+                            aria-pressed={isActive}
+                            className="group flex w-24 shrink-0 flex-col items-center text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                          >
+                            <span
+                              className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-full border-4 text-sm font-bold transition-all duration-300 ${
+                                isActive
+                                  ? 'scale-110 border-red-600 bg-red-600 text-white shadow-lg shadow-red-200'
+                                  : 'border-red-200 bg-white text-red-500 group-hover:border-red-400 group-hover:text-red-600'
+                              }`}
+                            >
+                              {item.year.slice(-2)}
+                            </span>
+                            <span className={`mt-4 text-base font-bold transition-colors duration-300 ${isActive ? 'text-red-600' : 'text-slate-700 group-hover:text-red-600'}`}>
+                              {item.year}
+                            </span>
+                            <span className={`mt-1 text-sm leading-5 transition-colors duration-300 ${isActive ? 'text-slate-900' : 'text-slate-500 group-hover:text-slate-700'}`}>
+                              {item.title}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
-                <div className="w-12 h-12 bg-red-600 rounded-full border-4 border-white shadow-lg relative z-10 flex items-center justify-center">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-                <div className="flex-1 hidden md:block"></div>
               </div>
-            ))}
+
+              <div className="flex items-center justify-center gap-3 md:gap-6">
+                <button
+                  type="button"
+                  onClick={() => changeTimelineStage(activeTimelineIndex - 1)}
+                  disabled={activeTimelineIndex === 0 || isTimelineAnimating}
+                  aria-label="Show previous timeline milestone"
+                  className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-red-200 bg-white text-xl font-bold text-red-600 transition-all duration-200 hover:border-red-600 hover:bg-red-600 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:border-slate-200 disabled:text-slate-300 disabled:hover:bg-white md:h-14 md:w-14"
+                >
+                  &larr;
+                </button>
+
+                <div
+                  tabIndex={0}
+                  role="region"
+                  aria-live="polite"
+                  aria-label={`Timeline stage ${activeTimelineIndex + 1}: ${activeTimelineItem.year} ${activeTimelineItem.title}`}
+                  className="min-h-[280px] flex-1 rounded-[1.75rem] border border-red-100 bg-gradient-to-br from-red-50 via-white to-white p-6 outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 md:min-h-[320px] md:p-8"
+                >
+                  <div
+                    className={`transition-all duration-300 ease-out ${
+                      isTimelineAnimating
+                        ? timelineDirection === 1
+                          ? 'translate-x-8 opacity-0'
+                          : '-translate-x-8 opacity-0'
+                        : 'translate-x-0 opacity-100'
+                    }`}
+                  >
+                    <div className="flex h-full flex-col items-center justify-center text-center">
+                      <span className="inline-flex items-center rounded-full bg-red-100 px-4 py-1 text-sm font-bold tracking-[0.2em] text-red-600">
+                        {activeTimelineItem.year}
+                      </span>
+                      <h3 className="mt-5 text-3xl font-fredoka font-bold text-slate-900 md:text-4xl">
+                        {activeTimelineItem.title}
+                      </h3>
+                      <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
+                        {activeTimelineItem.desc}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => changeTimelineStage(activeTimelineIndex + 1)}
+                  disabled={activeTimelineIndex === timelineItems.length - 1 || isTimelineAnimating}
+                  aria-label="Show next timeline milestone"
+                  className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-red-200 bg-white text-xl font-bold text-red-600 transition-all duration-200 hover:border-red-600 hover:bg-red-600 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:border-slate-200 disabled:text-slate-300 disabled:hover:bg-white md:h-14 md:w-14"
+                >
+                  &rarr;
+                </button>
+              </div>
+
+              <p className="text-center text-sm font-medium text-slate-500">
+                Milestone {activeTimelineIndex + 1} of {timelineItems.length}
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -107,10 +275,10 @@ const About: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { icon: <Heart className="text-red-600" />, title: "Student-First", desc: "Phát triển với các bé được đặt lên hàng đầu." },
-              { icon: <ShieldCheck className="text-red-600" />, title: "Minh Bạch", desc: "Minh bạch trong mọi quy trình giảng dạy và kết quả của các bé." },
-              { icon: <Award className="text-red-600" />, title: "Chất Lượng", desc: "Hướng các bé tới kết quả học tốt nhất có thể." },
-              { icon: <Sun className="text-red-600" />, title: "Tích Cực", desc: "Cho các bé môi trường học tập tích cực và gần gũi với thầy cô nhấ." },
+              { icon: <Heart className="text-red-600" />, title: "Student-First", desc: "PhÃ¡t triá»ƒn vá»›i cÃ¡c bÃ© Ä‘Æ°á»£c Ä‘áº·t lÃªn hÃ ng Ä‘áº§u." },
+              { icon: <ShieldCheck className="text-red-600" />, title: "Minh Báº¡ch", desc: "Minh báº¡ch trong má»i quy trÃ¬nh giáº£ng dáº¡y vÃ  káº¿t quáº£ cá»§a cÃ¡c bÃ©." },
+              { icon: <Award className="text-red-600" />, title: "Cháº¥t LÆ°á»£ng", desc: "HÆ°á»›ng cÃ¡c bÃ© tá»›i káº¿t quáº£ há»c tá»‘t nháº¥t cÃ³ thá»ƒ." },
+              { icon: <Sun className="text-red-600" />, title: "TÃ­ch Cá»±c", desc: "Cho cÃ¡c bÃ© mÃ´i trÆ°á»ng há»c táº­p tÃ­ch cá»±c vÃ  gáº§n gÅ©i vá»›i tháº§y cÃ´ nháº¥." },
             ].map((v, i) => (
               <div key={i} className="text-center p-8">
                 <div className="bg-red-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -124,7 +292,7 @@ const About: React.FC = () => {
         </div>
       </section>
       {/* <Certificate /> */}
-      <Certificate/>
+      <Certificate />
     </div>
   );
 };
