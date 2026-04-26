@@ -117,41 +117,47 @@ const About: React.FC = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 bg-red-50/60">
+      <section className="py-20 bg-white md:py-24">
         <div className="container mx-auto px-6">
-          <div className="relative bg-white border-2 border-red-200 rounded-[2.5rem] p-8 shadow-md">
+          <div className="relative mx-auto max-w-6xl bg-white border border-red-100 rounded-[2rem] px-6 py-8 shadow-[0_20px_60px_-34px_rgba(185,33,41,0.45)] md:px-10">
+            <div className="mb-4 flex justify-center">
+              <span className="inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-4 py-1.5 text-xs font-black uppercase tracking-[0.2em] text-red-600">
+                <Target className="h-4 w-4" />
+                Mission & Vision
+              </span>
+            </div>
             <h2 className="text-3xl lg:text-4xl font-fredoka font-bold text-slate-900 text-center">Sứ Mệnh & Tầm Nhìn</h2>
           </div>
         </div>
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-4 auto-rows-[180px] gap-4 mt-8 max-w-6xl mx-auto">
-            <div className="col-span-4 row-span-1 bg-red-600 rounded-2xl p-6 shadow flex items-center justify-center text-center">
+          <div className="grid grid-cols-1 gap-4 mt-6 max-w-6xl mx-auto md:grid-cols-2 lg:grid-cols-4 lg:auto-rows-[180px]">
+            <div className="col-span-1 md:col-span-2 lg:col-span-4 bg-[#BB2A31] rounded-[1.5rem] p-6 shadow-[0_20px_50px_-30px_rgba(185,33,41,0.75)] flex items-center justify-center text-center">
               <h3 className="text-3xl md:text-4xl font-fredoka font-black text-white tracking-wide">
                 Shine Bright
               </h3>
             </div>
 
-            <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-md border-[10px] border-yellow-300 relative">
-              <span className="absolute top-0 right-0 w-20 h-10 bg-yellow-300 rounded-bl-2xl shadow-md">
+            <div className="col-span-1 min-h-[260px] md:min-h-[420px] lg:col-span-2 lg:row-span-2 rounded-[1.5rem] overflow-hidden shadow-sm border border-yellow-200 relative group bg-yellow-50">
+              <span className="absolute top-4 right-4 z-10 w-16 h-3 bg-yellow-300 rounded-full shadow-md">
               </span>
               <img
                 src={studentraisinghand}
                 alt="Student raising hand"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             </div>
 
-            <div className="col-span-2 row-span-1 rounded-2xl overflow-hidden shadow-md">
+            <div className="col-span-1 min-h-[220px] lg:col-span-2 lg:row-span-1 rounded-[1.5rem] overflow-hidden shadow-sm border border-red-100 group bg-slate-50">
               <img
                 src={studentplayinggame}
                 alt="Students playing a game"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
             </div>
 
-            <div className="col-span-2 row-span-1 bg-yellow-400 rounded-2xl p-6 border border-red-100 flex items-center justify-center">
+            <div className="col-span-1 min-h-[220px] lg:col-span-2 lg:row-span-1 bg-yellow-400 rounded-[1.5rem] p-6 border border-yellow-300 shadow-sm flex items-center justify-center">
               <h3 className="text-center font-fredoka font-black text-white tracking-wide leading-tight break-words text-balance text-[clamp(1rem,4.8vw,2.25rem)]">HappyShine tin rằng mỗi đứa trẻ đều có tiềm năng tỏa sáng.
 
               </h3>
