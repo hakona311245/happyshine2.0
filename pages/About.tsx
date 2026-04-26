@@ -11,26 +11,36 @@ const About: React.FC = () => {
       year: '2012',
       title: 'The First Spark',
       desc: 'Happy Shine began as a small classroom with a few students and dedicated teachers.',
+      image: studentraisinghand,
+      imageAlt: 'Student raising a hand in class',
     },
     {
       year: '2015',
       title: 'Growing Brighter',
       desc: 'The center expanded and welcomed more young learners into a joyful English environment.',
+      image: studentplayinggame,
+      imageAlt: 'Students playing a classroom game',
     },
     {
       year: '2018',
       title: 'Global Recognition',
       desc: 'Happy Shine gained wider recognition for creative teaching and student-centered learning.',
+      image: studentraisinghand,
+      imageAlt: 'Student raising a hand in class',
     },
     {
       year: '2022',
       title: 'Digital Dawn',
       desc: 'A modern digital learning approach was introduced to support students more flexibly.',
+      image: studentplayinggame,
+      imageAlt: 'Students playing a classroom game',
     },
     {
       year: '2024',
       title: 'The Sunshine Hub',
       desc: 'Happy Shine stepped into a new chapter with a larger, more advanced learning space.',
+      image: studentraisinghand,
+      imageAlt: 'Student raising a hand in class',
     },
   ];
 
@@ -151,23 +161,23 @@ const About: React.FC = () => {
       </section>
 
       {/* History Timeline */}
-      <section className="py-24 bg-slate-50" onKeyDown={handleTimelineKeyDown}>
+      <section className="py-12 bg-slate-50 md:py-16" onKeyDown={handleTimelineKeyDown}>
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-fredoka font-bold text-slate-900">Happy Shine Timeline</h2>
-            <p className="mt-4 text-base text-slate-500 md:text-lg">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-fredoka font-bold text-slate-900 md:text-4xl">Happy Shine Timeline</h2>
+            <p className="sr-only">
               Move across the timeline with the side arrows, click any time mark, or use the left and right arrow keys.
             </p>
           </div>
 
-          <div className="mx-auto max-w-6xl rounded-[2rem] border border-red-100 bg-white p-6 shadow-[0_24px_70px_-32px_rgba(185,33,41,0.35)] md:p-8 lg:p-10">
-            <div className="flex flex-col gap-10">
-              <div className="rounded-[1.75rem] border border-red-100 bg-slate-50/80 p-5 md:p-6">
+          <div className="mx-auto max-w-6xl rounded-[1.75rem] border border-red-100 bg-white p-4 shadow-[0_24px_70px_-32px_rgba(185,33,41,0.35)] md:p-5 lg:p-6">
+            <div className="flex flex-col gap-5 md:gap-6">
+              <div className="rounded-[1.5rem] border border-red-100 bg-slate-50/80 p-3 md:p-4">
                 <div className="overflow-x-auto pb-2">
                   <div className="relative mx-auto min-w-[560px] px-4 md:px-6">
-                    <div className="absolute left-6 right-6 top-5 h-1 -translate-y-1/2 rounded-full bg-red-100" />
+                    <div className="absolute left-6 right-6 top-4 h-1 -translate-y-1/2 rounded-full bg-red-100" />
                     <div
-                      className="absolute left-6 top-5 h-1 -translate-y-1/2 rounded-full bg-red-600 transition-all duration-500 ease-out"
+                      className="absolute left-6 top-4 h-1 -translate-y-1/2 rounded-full bg-red-600 transition-all duration-500 ease-out"
                       style={{ width: `calc((100% - 3rem) * ${timelineProgress / 100})` }}
                     />
 
@@ -185,7 +195,7 @@ const About: React.FC = () => {
                             className="group flex w-24 shrink-0 flex-col items-center text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
                           >
                             <span
-                              className={`relative z-10 flex h-10 w-10 items-center justify-center rounded-full border-4 text-sm font-bold transition-all duration-300 ${
+                              className={`relative z-10 flex h-8 w-8 items-center justify-center rounded-full border-[3px] text-xs font-bold transition-all duration-300 ${
                                 isActive
                                   ? 'scale-110 border-red-600 bg-red-600 text-white shadow-lg shadow-red-200'
                                   : 'border-red-200 bg-white text-red-500 group-hover:border-red-400 group-hover:text-red-600'
@@ -193,7 +203,7 @@ const About: React.FC = () => {
                             >
                               {item.year.slice(-2)}
                             </span>
-                            <span className={`mt-4 text-base font-bold transition-colors duration-300 ${isActive ? 'text-red-600' : 'text-slate-700 group-hover:text-red-600'}`}>
+                            <span className={`mt-3 text-sm font-bold transition-colors duration-300 ${isActive ? 'text-red-600' : 'text-slate-700 group-hover:text-red-600'}`}>
                               {item.year}
                             </span>
                             <span className={`mt-1 text-sm leading-5 transition-colors duration-300 ${isActive ? 'text-slate-900' : 'text-slate-500 group-hover:text-slate-700'}`}>
@@ -223,7 +233,7 @@ const About: React.FC = () => {
                   role="region"
                   aria-live="polite"
                   aria-label={`Timeline stage ${activeTimelineIndex + 1}: ${activeTimelineItem.year} ${activeTimelineItem.title}`}
-                  className="min-h-[280px] flex-1 rounded-[1.75rem] border border-red-100 bg-gradient-to-br from-red-50 via-white to-white p-6 outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 md:min-h-[320px] md:p-8"
+                  className="flex-1 rounded-[1.5rem] border border-red-100 bg-gradient-to-br from-red-50 via-white to-white p-4 outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 md:min-h-[220px] md:p-5 lg:p-6"
                 >
                   <div
                     className={`transition-all duration-300 ease-out ${
@@ -234,16 +244,26 @@ const About: React.FC = () => {
                         : 'translate-x-0 opacity-100'
                     }`}
                   >
-                    <div className="flex h-full flex-col items-center justify-center text-center">
-                      <span className="inline-flex items-center rounded-full bg-red-100 px-4 py-1 text-sm font-bold tracking-[0.2em] text-red-600">
-                        {activeTimelineItem.year}
-                      </span>
-                      <h3 className="mt-5 text-3xl font-fredoka font-bold text-slate-900 md:text-4xl">
-                        {activeTimelineItem.title}
-                      </h3>
-                      <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
-                        {activeTimelineItem.desc}
-                      </p>
+                    <div className="grid h-full items-center gap-5 text-center md:grid-cols-[minmax(180px,0.9fr)_minmax(0,1fr)] md:gap-6 md:text-left">
+                      <div className="aspect-[16/9] w-full overflow-hidden rounded-[1.25rem] border border-red-100 bg-white shadow-md md:aspect-[4/3]">
+                        <img
+                          src={activeTimelineItem.image}
+                          alt={activeTimelineItem.imageAlt}
+                          className="h-full w-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="flex flex-col items-center md:items-start">
+                        <span className="inline-flex items-center rounded-full bg-red-100 px-4 py-1 text-sm font-bold tracking-[0.2em] text-red-600">
+                          {activeTimelineItem.year}
+                        </span>
+                        <h3 className="mt-3 text-2xl font-fredoka font-bold text-slate-900 md:text-3xl">
+                          {activeTimelineItem.title}
+                        </h3>
+                        <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">
+                          {activeTimelineItem.desc}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -259,7 +279,7 @@ const About: React.FC = () => {
                 </button>
               </div>
 
-              <p className="text-center text-sm font-medium text-slate-500">
+              <p className="text-center text-xs font-medium text-slate-500 md:text-sm">
                 Milestone {activeTimelineIndex + 1} of {timelineItems.length}
               </p>
             </div>
