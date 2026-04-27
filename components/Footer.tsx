@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
 
           <div>
             <div className="flex h-10 items-center mb-6">
-              <h4 className="text-xl font-bold">Tìm Hiểu Thêm</h4>
+              <h4 className="text-xl font-bold">Về Happy Shine</h4>
             </div>
             <ul className="space-y-4 text-slate-400">
               <li><Link to="/" className="hover:text-red-500 transition-colors">Home</Link></li>

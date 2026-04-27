@@ -123,23 +123,18 @@ const About: React.FC = () => {
             <div className="relative flex min-h-[340px] flex-col overflow-hidden rounded-[1.75rem] bg-[#BB2A31] p-6 text-white shadow-[0_24px_60px_-36px_rgba(185,33,41,0.8)] md:min-h-[420px] md:p-8 lg:p-10">
               <Sun className="absolute -bottom-14 -right-10 h-44 w-44 text-white/10" />
               <div className="relative z-10 flex min-h-0 flex-1 flex-col">
-                <div className="-ml-6 inline-flex w-fit rounded-r-[1.5rem] bg-yellow-300 px-7 py-4 shadow-lg md:-ml-8 lg:-ml-10">
-                  <span className="font-fredoka text-4xl font-black leading-none tracking-wide text-[#D9252E] md:text-5xl lg:text-6xl">
-                    Happy Shine
-                  </span>
-                </div>
 
                 <div className="flex flex-1 items-center py-4">
-                  <h2 className="max-w-[8.8ch] font-fredoka text-[clamp(3.6rem,9.4vw,7rem)] font-black leading-[0.94] text-white">
-                    Sứ Mệnh & Tầm Nhìn
+                  <h2 className="max-w-[8.8ch] font-fredoka text-[clamp(2.8rem,7vw,5.25rem)] font-black leading-[0.94] text-white">
+                    Be Happy, Shine Your Way!
                   </h2>
                 </div>
               </div>
             </div>
 
             <div className="grid gap-4">
-              <div className="flex min-h-[150px] items-center rounded-[1.75rem] bg-yellow-300 p-6 shadow-[0_18px_44px_-34px_rgba(15,23,42,0.45)] md:p-7">
-                <h3 className="max-w-2xl font-fredoka text-[clamp(1.35rem,3.6vw,2.35rem)] font-black leading-[1.05] tracking-wide text-[#D9252E]">
+              <div className="flex min-h-[150px] items-center rounded-[1.75rem] bg-[#BB2A31] p-6 shadow-[0_18px_44px_-34px_rgba(15,23,42,0.45)] md:p-7">
+                <h3 className="max-w-2xl font-fredoka text-[clamp(1.35rem,3.6vw,2.35rem)] font-black leading-[1.05] tracking-wide text-white">
                   HappyShine tin rằng mỗi đứa trẻ đều có tiềm năng tỏa sáng.
                 </h3>
               </div>

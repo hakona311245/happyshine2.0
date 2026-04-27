@@ -1,5 +1,5 @@
 
-import React, { useRef, useState, useMemo, useEffect } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Award, Star, ChevronLeft, ChevronRight, Check } from 'lucide-react';
 
 {/* URL HÌNH HỌC SINH */}
@@ -8,14 +8,23 @@ import chaungockienimg from "@/media/img/students/movers/chaungockien.jpg";
 import nhuthaoimg from "@/media/img/students/movers/daongocnhuthao.jpg";
 import lucviimg from "@/media/img/students/movers/tranlucvi.jpg";
 
-const students = [
-  { name: "Phạm Nhựt Khanh", level: "Movers Champ", category: "Movers", image:phamnhutkhanhimg},
-  { name: "Châu Ngọc Kiên", level: "Movers Champ", category: "Movers", image:chaungockienimg},
-  { name: "Đào Ngọc Như Thảo", level: "Movers Champ", category: "Movers", image:nhuthaoimg},
-  { name: "Trần Lục Vi", level: "Movers Champ", category: "Movers", image:lucviimg},
-];
+const categories = ["All", "Kids", "Starters", "Movers", "Flyers", "KET", "PET", "IELTS"] as const;
 
-const categories = ["All", "Kids", "Starters", "Movers", "Flyers", "KET", "PET", "IELTS"];
+type AchievementCategory = (typeof categories)[number];
+
+type StudentAchievement = {
+  name: string;
+  level: string;
+  category: Exclude<AchievementCategory, "All">;
+  image: string;
+};
+
+const students: StudentAchievement[] = [
+  { name: "Phạm Nhựt Khanh", level: "Movers Champ", category: "Movers", image: phamnhutkhanhimg },
+  { name: "Châu Ngọc Kiên", level: "Movers Champ", category: "Movers", image: chaungockienimg },
+  { name: "Đào Ngọc Như Thảo", level: "Movers Champ", category: "Movers", image: nhuthaoimg },
+  { name: "Trần Lục Vi", level: "Movers Champ", category: "Movers", image: lucviimg },
+];
 
 interface StudentAchievementsProps {
   defaultFilter?: string;
@@ -24,36 +33,111 @@ interface StudentAchievementsProps {
 const StudentAchievements: React.FC<StudentAchievementsProps> = ({ defaultFilter = "All" }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeFilter, setActiveFilter] = useState(defaultFilter);
+  const [currentScrollIndex, setCurrentScrollIndex] = useState(0);
 
   useEffect(() => {
     setActiveFilter(defaultFilter);
   }, [defaultFilter]);
+
+  useEffect(() => {
+    setCurrentScrollIndex(0);
+    scrollRef.current?.scrollTo({ left: 0, behavior: 'auto' });
+  }, [activeFilter]);
 
   const filteredStudents = useMemo(() => {
     if (activeFilter === "All") return students;
     return students.filter(s => s.category === activeFilter);
   }, [activeFilter]);
 
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const container = scrollRef.current;
-      const firstChild = container.children[0] as HTMLElement;
-      if (!firstChild) return;
+  const getCarouselMetrics = useCallback(() => {
+    const container = scrollRef.current;
+    const firstChild = container?.children[0] as HTMLElement | undefined;
 
-      const cardWidth = firstChild.offsetWidth;
-      const gap = 24;
-      const scrollAmount = cardWidth + gap;
+    if (!container || !firstChild) return null;
 
-      if (direction === 'left') {
-        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      } else {
-        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    const styles = window.getComputedStyle(container);
+    const gap = parseFloat(styles.columnGap || styles.gap) || 24;
+    const step = firstChild.offsetWidth + gap;
+    const maxScroll = Math.max(0, container.scrollWidth - container.clientWidth);
+    const maxIndex = step > 0 ? Math.ceil(maxScroll / step) : 0;
+
+    return { container, step, maxIndex };
+  }, []);
+
+  const updateScrollIndex = useCallback(() => {
+    const metrics = getCarouselMetrics();
+    if (!metrics) return;
+
+    const { container, step, maxIndex } = metrics;
+    const nextIndex = step > 0
+      ? Math.min(maxIndex, Math.max(0, Math.round(container.scrollLeft / step)))
+      : 0;
+
+    setCurrentScrollIndex(nextIndex);
+  }, [getCarouselMetrics]);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    let frameId: number | null = null;
+    const handleScroll = () => {
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
       }
+
+      frameId = window.requestAnimationFrame(updateScrollIndex);
+    };
+
+    handleScroll();
+    container.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+
+    return () => {
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
+      }
+
+      container.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, [filteredStudents.length, updateScrollIndex]);
+
+  const scroll = (direction: 'left' | 'right') => {
+    const metrics = getCarouselMetrics();
+    if (!metrics) return;
+
+    const { container, step, maxIndex } = metrics;
+    const currentIndex = step > 0
+      ? Math.min(maxIndex, Math.max(0, Math.round(container.scrollLeft / step)))
+      : currentScrollIndex;
+    const nextIndex = direction === 'right'
+      ? currentIndex >= maxIndex ? 0 : currentIndex + 1
+      : currentIndex <= 0 ? maxIndex : currentIndex - 1;
+
+    setCurrentScrollIndex(nextIndex);
+    container.scrollTo({
+      left: nextIndex >= maxIndex ? container.scrollWidth : nextIndex * step,
+      behavior: 'smooth',
+    });
+  };
+
+  const hasAchievements = filteredStudents.length > 0;
+
+  const arrowClassName = "inline-flex h-11 w-11 items-center justify-center rounded-full border border-red-100 bg-white text-red-600 shadow-md shadow-red-100/70 transition-all hover:border-red-600 hover:bg-red-600 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 active:scale-95 md:h-12 md:w-12";
+
+  const filterButtonClassName = (isActive: boolean) => {
+    const baseClassName = "rounded-full px-4 py-2 text-sm font-bold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 md:px-5";
+
+    if (isActive) {
+      return `${baseClassName} bg-red-600 text-white shadow-lg shadow-red-200 scale-105`;
     }
+
+    return `${baseClassName} bg-slate-50 text-slate-600 hover:bg-slate-100 hover:text-red-600`;
   };
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-white relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-100 to-transparent"></div>
       
       <div className="container mx-auto px-6">
@@ -71,12 +155,10 @@ const StudentAchievements: React.FC<StudentAchievementsProps> = ({ defaultFilter
           {categories.map((cat) => (
             <button
               key={cat}
+              type="button"
               onClick={() => setActiveFilter(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
-                activeFilter === cat 
-                ? 'bg-red-600 text-white shadow-lg shadow-red-200 scale-105' 
-                : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
-              }`}
+              aria-pressed={activeFilter === cat}
+              className={filterButtonClassName(activeFilter === cat)}
             >
               {cat}
             </button>
@@ -85,21 +167,23 @@ const StudentAchievements: React.FC<StudentAchievementsProps> = ({ defaultFilter
 
         {/* Horizontal Scroller Container */}
         <div className="relative group max-w-6xl mx-auto">
-          {filteredStudents.length > 0 ? (
+          {hasAchievements ? (
             <>
               {/* Scroll Buttons */}
-              <div className="absolute left-[-15px] md:left-[-30px] top-1/2 -translate-y-1/2 z-20 pointer-events-none w-[calc(100%+30px)] md:w-[calc(100%+60px)] flex justify-between">
+              <div className="mb-5 flex items-center justify-center gap-3 md:justify-end">
                 <button 
+                  type="button"
                   onClick={() => scroll('left')}
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all active:scale-95 pointer-events-auto"
-                  aria-label="Scroll Left"
+                  className={arrowClassName}
+                  aria-label="Show previous student achievement"
                 >
                   <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
                 </button>
                 <button 
+                  type="button"
                   onClick={() => scroll('right')}
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all active:scale-95 pointer-events-auto"
-                  aria-label="Scroll Right"
+                  className={arrowClassName}
+                  aria-label="Show next student achievement"
                 >
                   <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                 </button>
@@ -107,39 +191,36 @@ const StudentAchievements: React.FC<StudentAchievementsProps> = ({ defaultFilter
 
               <div 
                 ref={scrollRef}
-                className="flex overflow-x-auto gap-6 pb-8 pt-2 snap-x snap-mandatory no-scrollbar scroll-smooth"
+                className="flex overflow-x-auto gap-5 pb-8 pt-2 snap-x snap-mandatory no-scrollbar scroll-smooth md:gap-6"
               >
                 {filteredStudents.map((student, index) => (
-                  <div 
+                  <article 
                     key={`${student.name}-${index}`} 
-                    className="flex-shrink-0 w-full md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] snap-start"
+                    className="flex-shrink-0 w-full snap-start md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)]"
                   >
-                    <div className="group bg-white rounded-[2rem] overflow-hidden border border-slate-100 hover:border-red-400 transition-all duration-500 shadow-md hover:shadow-xl h-full">
+                    <div className="group bg-white rounded-[1.75rem] overflow-hidden border border-slate-100 hover:border-red-400 transition-all duration-500 shadow-md hover:shadow-xl h-full">
                       {/* Image Container */}
-                      <div className="relative h-[280px] md:h-[340px] overflow-hidden">
+                      <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
                         <img 
                           src={student.image} 
                           alt={student.name} 
-                          className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" 
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-all duration-700" 
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        {/*
-                        {/* Floating Level Tag 
-                        <div className="absolute bottom-6 left-6 right-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                          <div className="inline-flex items-center gap-1.5 text-xs font-black text-white bg-red-600 px-4 py-2 rounded-full uppercase tracking-widest shadow-xl">
-                            <Star className="w-3.5 h-3.5 fill-current" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-90"></div>
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <div className="inline-flex items-center gap-1.5 rounded-full bg-red-600 px-4 py-2 text-xs font-black uppercase tracking-widest text-white shadow-xl shadow-red-900/20">
+                            <Star className="w-3.5 h-3.5 fill-current" aria-hidden="true" />
                             {student.level}
                           </div>
                         </div>
-                         */}
                       </div>
                       
                       {/* Content Area */}
-                      <div className="p-6 text-center bg-white relative">
+                      <div className="p-5 text-center bg-white relative md:p-6">
                         <h4 className="text-xl md:text-2xl font-fredoka font-bold text-slate-900 group-hover:text-red-600 transition-colors">
                           {student.name}
                         </h4>
-                        <div className="flex items-center justify-center gap-1.5 mt-1 text-slate-500 text-sm">
+                        <div className="mt-2 flex items-center justify-center gap-1.5 text-sm text-slate-500">
                            <Check className="w-4 h-4 text-green-500" />
                            <span>Đã xuất sắc vượt qua level</span>
                         </div>
@@ -152,14 +233,14 @@ const StudentAchievements: React.FC<StudentAchievementsProps> = ({ defaultFilter
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </article>
                 ))}
               </div>
             </>
           ) : (
             <div className="py-20 text-center bg-slate-50 rounded-[2rem] border-2 border-dashed border-slate-200">
               <Award className="w-12 h-12 text-slate-300 mx-auto mb-4" />
-              <p className="text-slate-500 font-medium">Các bé level {activeFilter} level sẽ được giới thiệu ngay đây</p>
+              <p className="text-slate-500 font-medium">Các bé level {activeFilter} sẽ được giới thiệu ngay đây</p>
             </div>
           )}
         </div>
