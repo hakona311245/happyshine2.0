@@ -106,7 +106,7 @@ const About: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Page Header */}
-      <section className="py-20 bg-red-600 text-white relative overflow-hidden">
+      <section className="py-20 bg-[#BB2A31] text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 p-20 opacity-10">
           <Sun className="w-96 h-96 animate-spin-slow" style={{ animationDuration: '60s' }} />
         </div>
@@ -117,50 +117,52 @@ const About: React.FC = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-white md:py-24">
-        <div className="container mx-auto px-6">
-          <div className="relative mx-auto max-w-6xl bg-white border border-red-100 rounded-[2rem] px-6 py-8 shadow-[0_20px_60px_-34px_rgba(185,33,41,0.45)] md:px-10">
-            <div className="mb-4 flex justify-center">
-              <span className="inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-4 py-1.5 text-xs font-black uppercase tracking-[0.2em] text-red-600">
-                <Target className="h-4 w-4" />
-                Mission & Vision
-              </span>
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-fredoka font-bold text-slate-900 text-center">Sứ Mệnh & Tầm Nhìn</h2>
-          </div>
-        </div>
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 gap-4 mt-6 max-w-6xl mx-auto md:grid-cols-2 lg:grid-cols-4 lg:auto-rows-[180px]">
-            <div className="col-span-1 md:col-span-2 lg:col-span-4 bg-[#BB2A31] rounded-[1.5rem] p-6 shadow-[0_20px_50px_-30px_rgba(185,33,41,0.75)] flex items-center justify-center text-center">
-              <h3 className="text-3xl md:text-4xl font-fredoka font-black text-white tracking-wide">
-                Shine Bright
-              </h3>
-            </div>
+      <section className="bg-white py-12 md:py-16">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="mx-auto grid max-w-6xl gap-4 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1fr)]">
+            <div className="relative flex min-h-[340px] flex-col overflow-hidden rounded-[1.75rem] bg-[#BB2A31] p-6 text-white shadow-[0_24px_60px_-36px_rgba(185,33,41,0.8)] md:min-h-[420px] md:p-8 lg:p-10">
+              <Sun className="absolute -bottom-14 -right-10 h-44 w-44 text-white/10" />
+              <div className="relative z-10 flex min-h-0 flex-1 flex-col">
+                <div className="-ml-6 inline-flex w-fit rounded-r-[1.5rem] bg-yellow-300 px-7 py-4 shadow-lg md:-ml-8 lg:-ml-10">
+                  <span className="font-fredoka text-4xl font-black leading-none tracking-wide text-[#D9252E] md:text-5xl lg:text-6xl">
+                    Happy Shine
+                  </span>
+                </div>
 
-            <div className="col-span-1 min-h-[260px] md:min-h-[420px] lg:col-span-2 lg:row-span-2 rounded-[1.5rem] overflow-hidden shadow-sm border border-yellow-200 relative group bg-yellow-50">
-              <span className="absolute top-4 right-4 z-10 w-16 h-3 bg-yellow-300 rounded-full shadow-md">
-              </span>
-              <img
-                src={studentraisinghand}
-                alt="Student raising hand"
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
+                <div className="flex flex-1 items-center py-4">
+                  <h2 className="max-w-[8.8ch] font-fredoka text-[clamp(3.6rem,9.4vw,7rem)] font-black leading-[0.94] text-white">
+                    Sứ Mệnh & Tầm Nhìn
+                  </h2>
+                </div>
+              </div>
             </div>
 
-            <div className="col-span-1 min-h-[220px] lg:col-span-2 lg:row-span-1 rounded-[1.5rem] overflow-hidden shadow-sm border border-red-100 group bg-slate-50">
-              <img
-                src={studentplayinggame}
-                alt="Students playing a game"
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
+            <div className="grid gap-4">
+              <div className="flex min-h-[150px] items-center rounded-[1.75rem] bg-yellow-300 p-6 shadow-[0_18px_44px_-34px_rgba(15,23,42,0.45)] md:p-7">
+                <h3 className="max-w-2xl font-fredoka text-[clamp(1.35rem,3.6vw,2.35rem)] font-black leading-[1.05] tracking-wide text-[#D9252E]">
+                  HappyShine tin rằng mỗi đứa trẻ đều có tiềm năng tỏa sáng.
+                </h3>
+              </div>
 
-            <div className="col-span-1 min-h-[220px] lg:col-span-2 lg:row-span-1 bg-yellow-400 rounded-[1.5rem] p-6 border border-yellow-300 shadow-sm flex items-center justify-center">
-              <h3 className="text-center font-fredoka font-black text-white tracking-wide leading-tight break-words text-balance text-[clamp(1rem,4.8vw,2.25rem)]">HappyShine tin rằng mỗi đứa trẻ đều có tiềm năng tỏa sáng.
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="group aspect-[4/3] overflow-hidden rounded-[1.75rem] bg-slate-100 shadow-[0_18px_44px_-36px_rgba(15,23,42,0.65)] sm:aspect-[3/4]">
+                  <img
+                    src={studentraisinghand}
+                    alt="Student raising hand"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
 
-              </h3>
+                <div className="group aspect-[4/3] overflow-hidden rounded-[1.75rem] bg-slate-100 shadow-[0_18px_44px_-36px_rgba(15,23,42,0.65)] sm:aspect-[3/4]">
+                  <img
+                    src={studentplayinggame}
+                    alt="Students playing a game"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -301,10 +303,10 @@ const About: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { icon: <Heart className="text-red-600" />, title: "Student-First", desc: "PhÃ¡t triá»ƒn vá»›i cÃ¡c bÃ© Ä‘Æ°á»£c Ä‘áº·t lÃªn hÃ ng Ä‘áº§u." },
-              { icon: <ShieldCheck className="text-red-600" />, title: "Minh Báº¡ch", desc: "Minh báº¡ch trong má»i quy trÃ¬nh giáº£ng dáº¡y vÃ  káº¿t quáº£ cá»§a cÃ¡c bÃ©." },
-              { icon: <Award className="text-red-600" />, title: "Cháº¥t LÆ°á»£ng", desc: "HÆ°á»›ng cÃ¡c bÃ© tá»›i káº¿t quáº£ há»c tá»‘t nháº¥t cÃ³ thá»ƒ." },
-              { icon: <Sun className="text-red-600" />, title: "TÃ­ch Cá»±c", desc: "Cho cÃ¡c bÃ© mÃ´i trÆ°á»ng há»c táº­p tÃ­ch cá»±c vÃ  gáº§n gÅ©i vá»›i tháº§y cÃ´ nháº¥." },
+              { icon: <Heart className="text-red-600" />, title: "Student-First", desc: "Every child is supported with care, patience, and attention to their individual learning journey." },
+              { icon: <ShieldCheck className="text-red-600" />, title: "Transparency", desc: "We communicate clearly with families about learning progress, teaching methods, and student outcomes." },
+              { icon: <Award className="text-red-600" />, title: "Quality", desc: "Our lessons are designed to help students build strong English skills and achieve their best results." },
+              { icon: <Sun className="text-red-600" />, title: "Positivity", desc: "We create a warm, encouraging classroom where students feel confident, motivated, and ready to shine." },
             ].map((v, i) => (
               <div key={i} className="text-center p-8">
                 <div className="bg-red-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
