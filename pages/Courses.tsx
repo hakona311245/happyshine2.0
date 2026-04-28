@@ -126,18 +126,6 @@ const Courses: React.FC = () => {
             </div>
             <h1 className="text-4xl lg:text-6xl font-fredoka font-bold mb-6 leading-tight">The Sunshine Path</h1>
             <p className="text-lg md:text-xl text-red-100 max-w-3xl mx-auto leading-relaxed">Đi theo lộ trình của HappyShine thiết kế và xem sự tự tin với tiếng Anh của bé ngày một càng tỏa sáng.</p>
-            <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3">
-              {[
-                { value: '7', label: 'Learning levels' },
-                { value: 'Pre-A1', label: 'Starting point' },
-                { value: 'C1+', label: 'Advanced goal' },
-              ].map((item) => (
-                <div key={item.label} className="rounded-2xl border border-white/20 bg-white/10 px-5 py-4 backdrop-blur">
-                  <p className="font-fredoka text-3xl font-black text-white">{item.value}</p>
-                  <p className="mt-1 text-sm font-semibold text-red-100">{item.label}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
